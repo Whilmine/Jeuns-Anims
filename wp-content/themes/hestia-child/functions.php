@@ -62,5 +62,24 @@ function wpm_custom_post_type() {
 
 add_action( 'init', 'wpm_custom_post_type', 0 );
 
+// Ajout du Menu vers Association
 
+function add_sub_menu() {
+
+// un seul menu
+    register_nav_menus('association-menu', __('Menu Page Association') );
+
+    add_action( 'init', 'add_sub_menu');
+
+// plusieurs menu
+    register_nav_menus(
+ array(
+'association-menu' => __( 'Menu vers Association' ),
+ 'test-menu' => __( 'Menu Test Random' ),
+ )
+ );
+}
+add_action( 'init', 'register_my_menus' );
+
+}
 ?>
