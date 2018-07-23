@@ -67,9 +67,9 @@ add_action( 'init', 'wpm_custom_post_type', 0 );
 function add_sub_menu() {
 
 // un seul menu
-    register_nav_menus('association-menu', __('Menu Page Association') );
+    // register_nav_menus('association-menu', __('Menu Page Association') );
 
-    add_action( 'init', 'add_sub_menu');
+    // add_action( 'init', 'add_sub_menu');
 
 // plusieurs menu
     register_nav_menus(
@@ -79,7 +79,7 @@ function add_sub_menu() {
  )
  );
 }
-add_action( 'init', 'register_my_menus' );
+add_action( 'init', 'add_sub_menu' );
 
 }
 ?>
