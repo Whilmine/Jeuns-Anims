@@ -1,13 +1,20 @@
 <?php
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
-function theme_enqueue_styles() {
-wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+//add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+//function theme_enqueue_styles() {
+//wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
+ //   wp_enqueue_style( 'other', get_template_directory_uri() . '/style2.css' );
 
+//}
+
+add_action( 'wp_enqueue_scripts', 'enqueue_my_styles' );
+function enqueue_my_styles() {
+
+    global $wp_styles;
+
+    // Load the main stylesheet
+    wp_enqueue_style( 'my-theme', get_template_directory_uri() . '/style.css' );
+    
 }
-
-/*
-* On utilise une fonction pour créer notre custom post type 'Séries TV'
-*/
 
 function wpm_custom_post_type() {
 
