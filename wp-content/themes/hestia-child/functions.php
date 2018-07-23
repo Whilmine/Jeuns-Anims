@@ -8,9 +8,7 @@
 
 add_action( 'wp_enqueue_scripts', 'enqueue_my_styles' );
 function enqueue_my_styles() {
-
     global $wp_styles;
-
     // Load the main stylesheet
     wp_enqueue_style( 'my-theme', get_template_directory_uri() . '/style.css' );
 
