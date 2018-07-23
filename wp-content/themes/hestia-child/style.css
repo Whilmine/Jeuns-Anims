@@ -13,7 +13,7 @@ Template: hestia
     font-style: italic;
     font-weight: 300;
 }
-.page.home .wrapper{
+.page .wrapper{
     background-color: #01a7b4;
 }
 h1.hestia-title, .main-title{
