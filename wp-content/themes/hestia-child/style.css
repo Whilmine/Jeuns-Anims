@@ -128,22 +128,23 @@ li{
     position: absolute;
 }
 /*Menu HomePage*/
-.menu-association-menu{
+#menu-association-menu{
     display: flex;
     justify-content: space-evenly;
 }
 
-.menu-association-menu > li {
+#menu-association-menu > li.menu-item {
     padding:0.85rem;
     background-color:var(--main-blue);
     -webkit-clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 17% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 17% 100%);
-    width: 90px;
+   /* min-width: 100px;*/
+    display:inline-block;
     padding: 5px 5px 5px 20px;
     border:1px solid #c1c1c1;
 }
 
-.menu-association-menu > li a{
+#menu-association-menu > li.menu-item a{
     color:#fff;
     font-size:1rem;
     font-weight:bold;
