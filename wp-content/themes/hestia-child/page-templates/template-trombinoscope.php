@@ -8,18 +8,14 @@
  * @since Hestia 1.0
  */
 
-get_header();
-
+//get_header();
+get_header( "pages" );
 /**
  * Don't display page header if header layout is set as classic blog.
  */
 //do_action( 'hestia_before_single_page_wrapper' ); ?>
-<div class="container header white"  style="background-color: #00a878">
-    <h1 class="main-title first-title"><?php the_title();?></h1>
-    <div class="title-logo-wrapper">
-        <a class="navbar-brand" >
-    </div>
-</div>
+
+
 
 
 
