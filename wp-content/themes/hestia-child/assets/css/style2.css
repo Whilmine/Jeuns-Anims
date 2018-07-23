@@ -2,3 +2,25 @@ body.admin-bar  .main-template .navbar{
     position: relative;
     margin-top: 0;
 }
+
+
+/***** Trombinoscope *****/
+#trombinoscope .card{
+    padding: 2% 5% 5% 5%;
+    width: 25%;
+    margin-bottom: auto;
+}
+#trombinoscope .card img{
+
+}
+#trombinoscope .card:nth-child(odd){
+    margin: 0 5% auto 10%;
+}
+#trombinoscope .card:nth-child(2){
+    margin-top: 200px;
+}
+#trombinoscope span.secondary-title{
+    position: absolute;
+    left: 55%;
+    height: 200px;
+}
