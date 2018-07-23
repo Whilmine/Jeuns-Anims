@@ -1,0 +1,146 @@
+/*
+Theme Name: hestia-child
+Description: thème enfant Hestia
+Template: hestia
+*/
+
+
+@import "fonts/font.css";
+
+/*Main settings*/
+.page-header.header-small .hestia-title{
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    font-weight: 300;
+}
+.page.home .wrapper{
+    background-color: #01a7b4;
+}
+h1.hestia-title, .main-title{
+    letter-spacing: 2px;
+    max-width:90%;
+    margin-bottom:1.5rem;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+/* Template pages secondaires */
+.container.header{
+    margin-top: 70px;
+    height: 400px;
+}
+/*Overwritting Theme parent*/
+.main{
+    background: transparent;
+}
+li{
+    list-style: none;
+}
+.btn.btn-primary{
+    background-color:#009aa4 !important;
+}
+.card{
+
+}
+
+/**** Composants objets/**** */
+.titlefont {
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+.first-title-color{
+    color:  #009aa4;
+}
+.second-title-color{
+    color: #2cbbc4;
+}
+.accentblue{
+    color: #2afffa;
+}
+.white{
+    color: #ffffff;
+}
+.first-title{
+    font-size: 100px;
+}
+.secondary-title{
+    font-size: 65px;
+}
+.third-title{
+    font-size: 50px;
+}
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+.grid{
+    display: grid;
+}
+.border-title{
+    border-bottom: 3px solid white;
+}
+
+
+/*Home*/
+.home .grid{
+    grid-template-columns: 10% 35% 10% 35% 10%
+}
+#a-la-une{
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+#otherevents{
+    grid-column-start: 4;
+}
+#otherevents li:first-child{
+    display: none;
+}
+#otherevents li{
+    display: flex;
+    max-height: 150px;
+    overflow: hidden;
+    margin: 0 0 5%;
+}
+#otherevents .featured-img{
+    height: 150px;
+    min-width: 150px;
+    background-position: center;
+    background-size: cover;
+    margin: 5px 15px 5px 0;
+}
+
+
+/***** Trombinoscope *****/
+#trombinoscope .card{
+    padding: 2% 5% 5% 5%;
+    width: 25%;
+    margin-bottom: auto;
+}
+#trombinoscope .card:nth-child(odd){
+    margin: 0 5% auto 10%;
+}
+#trombinoscope .card:nth-child(2){
+    margin-top: 200px;
+}
+#trombinoscope span.secondary-title{
+    position: absolute;
+    left: 55%;
+    height: 200px;
+}
+
+
+/****** Modification interface ****/
+.customize-partial-edit-shortcuts-shown *{
+    background-color: #00a878;
+}
+
+.customize-partial-edit-shortcuts-shown .title-logo-wrapper{
+    width: 500px;
+    position: absolute;
+}
