@@ -1,4 +1,4 @@
-
-*{
-
+body.admin-bar  .main-template .navbar{
+    position: relative;
+    margin-top: 0;
 }
