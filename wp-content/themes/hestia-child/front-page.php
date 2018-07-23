@@ -87,10 +87,19 @@ if ( ! is_page_template() ) {
                             <p>
                                 <?php echo $post->post_content;?>
                             </p>
-                            <span>
+
+                            <nav class="sub-nav">
+                                <?php
+                                    wp_nav_menu ( array (
+                                        'theme_location' => 'association-menu' ,
+                                        'menu_class' => 'test-asso-menu',
+
+                                         ) ); ?>
+                            </nav>
+                            <!-- <span>
                                 <btn class="btn btn-primary">Lien 1</btn>
                                 <btn class="btn btn-primary">Lien 2</btn>
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                 </div>

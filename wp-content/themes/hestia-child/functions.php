@@ -81,5 +81,4 @@ function add_sub_menu() {
 }
 add_action( 'init', 'add_sub_menu' );
 
-}
 ?>
