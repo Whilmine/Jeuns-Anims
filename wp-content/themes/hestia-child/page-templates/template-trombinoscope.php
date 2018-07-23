@@ -35,7 +35,8 @@ get_header( "pages" );
 
         <span class="accentblue titlefont secondary-title">Les membres du bureau</span>
     </div>
-    a partir d'ici c'est les membres randoms
+
+    <span class="accentblue titlefont secondary-title">Les bénévoles</span>
 
 
     <?php

@@ -13,7 +13,7 @@ Template: hestia
     font-style: italic;
     font-weight: 300;
 }
-.page.home .wrapper{
+.page .wrapper{
     background-color: #01a7b4;
 }
 h1.hestia-title, .main-title{
@@ -111,26 +111,6 @@ li{
     background-size: cover;
     margin: 5px 15px 5px 0;
 }
-
-
-/***** Trombinoscope *****/
-#trombinoscope .card{
-    padding: 2% 5% 5% 5%;
-    width: 25%;
-    margin-bottom: auto;
-}
-#trombinoscope .card:nth-child(odd){
-    margin: 0 5% auto 10%;
-}
-#trombinoscope .card:nth-child(2){
-    margin-top: 200px;
-}
-#trombinoscope span.secondary-title{
-    position: absolute;
-    left: 55%;
-    height: 200px;
-}
-
 
 /****** Modification interface ****/
 .customize-partial-edit-shortcuts-shown *{
