@@ -13,7 +13,7 @@ function enqueue_my_styles() {
 
     // Load the main stylesheet
     wp_enqueue_style( 'my-theme', get_template_directory_uri() . '/style.css' );
-    
+
 }
 
 function wpm_custom_post_type() {
