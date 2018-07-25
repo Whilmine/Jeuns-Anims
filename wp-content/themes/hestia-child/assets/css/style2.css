@@ -1,3 +1,4 @@
+
 body.admin-bar  .main-template .navbar{
     position: relative;
     margin-top: 0;
@@ -8,20 +9,31 @@ body.admin-bar  .main-template .navbar{
 }
 .main-template .navbar{
     background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+.main-template .navbar li a{
+    color: white;
+    text-transform: none;
+    font-family: kelsonlight;
 }
 /***** Trombinoscope *****/
+#trombinoscope .card-wrapper{
+    width: 30%;
+    text-align: center;
+}
 #trombinoscope .card{
     padding: 2% 5% 5% 5%;
-    width: 35%;
     margin-bottom: auto;
 }
 #trombinoscope .card img{
-
+    height:300px;
+    object-fit: cover;
 }
-#trombinoscope .card:nth-child(odd){
-    margin: 0 10% auto 10%;
+#trombinoscope .card-wrapper:nth-child(odd){
+    margin: 0 10% auto 15%
 }
-#trombinoscope .card:nth-child(2){
+#trombinoscope .card-wrapper:nth-child(2){
     margin-top: 200px;
 }
 #trombinoscope  div.flex-row span{

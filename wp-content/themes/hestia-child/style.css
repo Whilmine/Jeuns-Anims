@@ -10,6 +10,7 @@ Template: hestia
 
 :root{
     --main-blue:#01a7b4;
+    --secondary-blue:#009aa4;
 }
 
 
@@ -20,7 +21,7 @@ Template: hestia
     font-weight: 300;
 }
 .page .wrapper{
-    background-color: #01a7b4;
+    background-color:var(--main-blue);
 }
 h1.hestia-title, .main-title{
     letter-spacing: 2px;
@@ -54,7 +55,7 @@ li{
     text-transform: uppercase;
 }
 .first-title-color{
-    color:  #009aa4;
+    color: var(--secondary-blue)
 }
 .second-title-color{
     color: #2cbbc4;
@@ -81,6 +82,9 @@ li{
 .flex-column{
     display: flex;
     flex-direction: column;
+}
+.flex-wrap{
+    flex-wrap: wrap;
 }
 .grid{
     display: grid;
@@ -120,7 +124,7 @@ li{
 
 /****** Modification interface ****/
 .customize-partial-edit-shortcuts-shown *{
-    background-color: #00a878;
+
 }
 
 .customize-partial-edit-shortcuts-shown .title-logo-wrapper{

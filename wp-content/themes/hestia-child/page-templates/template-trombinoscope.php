@@ -20,27 +20,38 @@ get_header( "pages" );
 
 
 <div id="trombinoscope" class="<?php echo hestia_layout(); ?>">
-    <div class="flex-row">
+    <div class="flex-row flex-wrap">
 
 
     <?php
-    $loop = new WP_Query( array( 'post_type' => 'members','category_name' =>'membre-du-bureau',  'posts_per_page' => '10' ) ); ?>
+    $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
   <?php
+  $compteur = 0;
     while ( $loop->have_posts() ) : $loop->the_post();
+
         $meta = get_post_meta( $post->ID, 'your_fields', true );
     if ($meta['checkbox'] === 'checkbox'){
-        echo "yoooooo";
+        $compteur = $compteur +1;
+         echo "<div class='card-wrapper'><div class='card'><img src='";
+         echo (get_the_post_thumbnail_url())."'>";
+          echo  "<h3 class='titlefont first-title-color'>";
+          echo the_title();
+          echo "</h3>";
+          echo the_content();
+          echo "</div></div>";
     };
 ?>
+    <?php endwhile; wp_reset_query();
+  if ($compteur % 2 == 1)
+  {
+      echo "$compteur est impair";
+  }
+  elseif ($compteur % 2 == 0)
+  {
+      echo "le nombre de cartes est pair";
+  }
+    ?>
 
-
-
-    <div class="card">
-        <img src="<?php echo (get_the_post_thumbnail_url()) ?>">
-        <h3 class="titlefont first-title-color"><?php the_title() ?></h3>
-        <?php the_content() ?>
-    </div>
-    <?php endwhile; wp_reset_query(); ?>
 
         <span class="accentblue titlefont secondary-title">Les membres du bureau</span>
     </div>
@@ -49,13 +60,16 @@ get_header( "pages" );
 
 
     <?php
-    $secondloop = new WP_Query( array( 'post_type' => 'members', 'category_name' =>'membre', 'posts_per_page' => '10' ) ); ?>
-    <?php while ( $secondloop->have_posts() ) : $secondloop->the_post(); ?>
-        <div class="card">
-            <img src="<?php echo (get_the_post_thumbnail_url()) ?>">
-            <h1><?php the_title() ?></h1>
-            <?php the_content() ?>
-        </div>
+    $secondloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
+    <?php while ( $secondloop->have_posts() ) : $secondloop->the_post();
+    $meta = get_post_meta( $post->ID, 'your_fields', true );
+    if ($meta['checkbox'] != 'checkbox'){
+        echo "<div class='card'><img src='";
+        echo (get_the_post_thumbnail_url())."'>";
+        echo  "<h3 class='titlefont first-title-color'>".the_title()."</h3>".the_content()."</div>";
+    }
+    ?>
+
     <?php endwhile; wp_reset_query(); ?>
 
     </div>
