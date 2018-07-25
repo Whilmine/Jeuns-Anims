@@ -38,7 +38,7 @@ if ( ! is_page_template() ) {
                     <!-- Reste à écrire la condition : si un article existe dans la catégorie a la une, on l'affiche a la place -->
                     <!-- dans l'autre cas , on affiche l'article le plus recent -->
                     <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-                        <img src="<?php  echo the_post_thumbnail_url();?>">
+                        <img src="<?php echo the_post_thumbnail_url();?>">
                         <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                         <p><?php the_excerpt() ?></p>
                     <?php
@@ -87,10 +87,19 @@ if ( ! is_page_template() ) {
                             <p>
                                 <?php echo $post->post_content;?>
                             </p>
-                            <span>
+
+                            <nav class="sub-nav">
+                                <?php
+                                    wp_nav_menu ( array (
+                                        'theme_location' => 'association-menu' ,
+                                        'menu_class' => 'test-asso-menu',
+
+                                         ) ); ?>
+                            </nav>
+                            <!-- <span>
                                 <btn class="btn btn-primary">Lien 1</btn>
                                 <btn class="btn btn-primary">Lien 2</btn>
-                            </span>
+                            </span> -->
                         </div>
                     </div>
                 </div>

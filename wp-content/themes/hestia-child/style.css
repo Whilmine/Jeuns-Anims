@@ -7,6 +7,12 @@ Template: hestia
 
 @import "fonts/font.css";
 
+
+:root{
+    --main-blue:#01a7b4;
+}
+
+
 /*Main settings*/
 .page-header.header-small .hestia-title{
     font-family: "Barlow Condensed";
@@ -120,4 +126,26 @@ li{
 .customize-partial-edit-shortcuts-shown .title-logo-wrapper{
     width: 500px;
     position: absolute;
+}
+/*Menu HomePage*/
+#menu-association-menu{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#menu-association-menu > li.menu-item {
+    padding:0.85rem;
+    background-color:var(--main-blue);
+    -webkit-clip-path:polygon(0% 0%, 100% 0%, 100% 100%, 17% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 17% 100%);
+   /* min-width: 100px;*/
+    display:inline-block;
+    padding: 5px 5px 5px 20px;
+    border:1px solid #c1c1c1;
+}
+
+#menu-association-menu > li.menu-item a{
+    color:#fff;
+    font-size:1rem;
+    font-weight:bold;
 }
