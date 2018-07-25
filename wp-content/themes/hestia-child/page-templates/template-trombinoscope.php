@@ -22,10 +22,19 @@ get_header( "pages" );
 <div id="trombinoscope" class="<?php echo hestia_layout(); ?>">
     <div class="flex-row">
 
+
     <?php
     $loop = new WP_Query( array( 'post_type' => 'members','category_name' =>'membre-du-bureau',  'posts_per_page' => '10' ) ); ?>
   <?php
-    while ( $loop->have_posts() ) : $loop->the_post(); ?>
+    while ( $loop->have_posts() ) : $loop->the_post();
+        $meta = get_post_meta( $post->ID, 'your_fields', true );
+    if ($meta['checkbox'] === 'checkbox'){
+        echo "yoooooo";
+    };
+?>
+
+
+
     <div class="card">
         <img src="<?php echo (get_the_post_thumbnail_url()) ?>">
         <h3 class="titlefont first-title-color"><?php the_title() ?></h3>

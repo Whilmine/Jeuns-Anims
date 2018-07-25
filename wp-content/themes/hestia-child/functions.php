@@ -40,7 +40,7 @@ function wpm_custom_post_type() {
 
     $args = array(
         'label'               => __( "Membres de l'association"),
-        'description'         => __( 'Tous sur séries TV'),
+        'description'         => __( "Tous les membres de l'association"),
         'labels'              => $labels,
         // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
         'supports'            => array( 'title', 'editor','thumbnail','custom-fields', 'revisions' ),
@@ -57,10 +57,73 @@ function wpm_custom_post_type() {
 
     // On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
     register_post_type( 'members', $args );
+    register_taxonomy_for_object_type( 'category', 'members' );
+    register_taxonomy_for_object_type( 'post_tag', 'members' );
 
 }
 
 add_action( 'init', 'wpm_custom_post_type', 0 );
 
 
+
+
+function Memberfield_box() {
+    add_meta_box(
+        'member_field', // $id
+        'Status', // $title
+        'show_your_fields_meta_box', // $callback
+        'members', // $screen
+        'normal', // $context
+        'high' // $priority
+    );
+}
+add_action( 'add_meta_boxes', 'Memberfield_box' );
+
+function save_your_fields_meta( $post_id ) {
+    // verify nonce
+    if ( !wp_verify_nonce( $_POST['your_meta_box_nonce'], basename(__FILE__) ) ) {
+        return $post_id;
+    }
+    // check autosave
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return $post_id;
+    }
+    // check permissions
+    if ( 'page' === $_POST['post_type'] ) {
+        if ( !current_user_can( 'edit_page', $post_id ) ) {
+            return $post_id;
+        } elseif ( !current_user_can( 'edit_post', $post_id ) ) {
+            return $post_id;
+        }
+    }
+
+    $old = get_post_meta( $post_id, 'your_fields', true );
+    $new = $_POST['your_fields'];
+
+    if ( $new && $new !== $old ) {
+        update_post_meta( $post_id, 'your_fields', $new );
+    } elseif ( '' === $new && $old ) {
+        delete_post_meta( $post_id, 'your_fields', $old );
+    }
+}
+add_action( 'save_post', 'save_your_fields_meta' );
+
+
+
+function show_your_fields_meta_box() {
+    global $post;
+    $meta = get_post_meta( $post->ID, 'your_fields', true ); ?>
+
+    <input type="hidden" name="your_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+
+    <p>
+        <label for="your_fields[checkbox]">Membre du bureau
+            <input type="checkbox" name="your_fields[checkbox]" value="checkbox" <?php if ( $meta['checkbox'] === 'checkbox' ) echo 'checked'; ?>>
+        </label>
+
+
+    </p>
+
+
+<?php }
 ?>
