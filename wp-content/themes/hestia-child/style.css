@@ -12,8 +12,6 @@ Template: hestia
     --main-blue:#01a7b4;
     --secondary-blue:#009aa4;
 }
-
-
 /*Main settings*/
 .page-header.header-small .hestia-title{
     font-family: "Barlow Condensed";
@@ -31,8 +29,6 @@ h1.hestia-title, .main-title{
     text-align: center;
 }
 
-/* Template pages secondaires */
-
 /*Overwritting Theme parent*/
 .main{
     background: transparent;
@@ -42,9 +38,6 @@ li{
 }
 .btn.btn-primary{
     background-color:#009aa4 !important;
-}
-.card{
-
 }
 
 /**** Composants objets/**** */
@@ -86,13 +79,15 @@ li{
 .flex-wrap{
     flex-wrap: wrap;
 }
+.justify-content{
+    justify-content: center;
+}
 .grid{
     display: grid;
 }
 .border-title{
     border-bottom: 3px solid white;
 }
-
 
 /*Home*/
 .home .grid{
@@ -124,9 +119,7 @@ li{
 
 /****** Modification interface ****/
 .customize-partial-edit-shortcuts-shown *{
-
 }
-
 .customize-partial-edit-shortcuts-shown .title-logo-wrapper{
     width: 500px;
     position: absolute;

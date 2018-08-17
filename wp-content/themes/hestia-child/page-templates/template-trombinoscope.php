@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page trombinoscpe
+ * Template Name: Page trombinoscope
  *
  *Le template pour la page trombinoscope.
  *

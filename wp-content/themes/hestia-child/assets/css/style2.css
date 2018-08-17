@@ -41,3 +41,23 @@ body.admin-bar  .main-template .navbar{
     left: 55%;
     height: 200px;
 }
+/***** Actualités *****/
+#actualites .card{
+   width: 275px;
+    height: 275px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    margin-left: 35px;
+}
+#actualites .card-content{
+    visibility: hidden;
+    background: white;
+    height: 100px;
+    margin-top: 175px;
+    overflow: hidden;
+}
+#actualites .card:hover .card-content{
+    visibility: visible;
+
+}
