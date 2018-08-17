@@ -35,17 +35,15 @@ if ( (bool) $hide_top_bar === false ) {
 <div class="<?php echo esc_attr( $wrapper_div_classes ); ?> main-template">
 
 
-    <header class=" container header white <?php echo esc_attr( $header_class ); ?>"  style="background-color: #00a878">
-        <h1 class="main-title first-title titlefont"><?php the_title();?></h1>
-        <div class="title-logo-wrapper">
-            <a class="navbar-brand" ></a>
+    <header>
+        <div class=" container header white <?php echo esc_attr( $header_class ); ?>" >
+            <h1 class="main-title first-title titlefont"><?php the_title();?></h1>
+            <div class="title-logo-wrapper">
+                <a class="navbar-brand" ></a>
+            </div>
         </div>
+        <div style="height: 2px; background-color: #FFffff"></div>
     </header>
-
-
-
-
-
 
         <?php do_action( 'hestia_do_header' ); ?>
 

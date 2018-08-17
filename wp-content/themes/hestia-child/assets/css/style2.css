@@ -1,5 +1,5 @@
 
-body.admin-bar  .main-template .navbar{
+.main-template .navbar{
     position: relative;
     margin-top: 0;
     margin-bottom: 0;
@@ -16,6 +16,9 @@ body.admin-bar  .main-template .navbar{
     color: white;
     text-transform: none;
     font-family: kelsonlight;
+}
+.main-template .card *{
+    color: orangered;
 }
 /***** Trombinoscope *****/
 #trombinoscope .card-wrapper{
