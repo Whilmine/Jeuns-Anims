@@ -18,7 +18,7 @@ Template: hestia
     font-style: italic;
     font-weight: 300;
 }
-.page .wrapper{
+body{
     background-color:var(--main-blue);
 }
 h1.hestia-title, .main-title{
@@ -27,6 +27,9 @@ h1.hestia-title, .main-title{
     margin-bottom:1.5rem;
     transition: all 0.2s ease-in-out;
     text-align: center;
+}
+.card-content{
+    padding: 5px 15px;
 }
 
 /*Overwritting Theme parent*/
@@ -61,12 +64,18 @@ li{
 }
 .first-title{
     font-size: 100px;
+    display: inline-flex;
+    padding-right: 50px;
 }
 .secondary-title{
     font-size: 65px;
 }
 .third-title{
     font-size: 50px;
+}
+.fourth-title{
+    font-size: 28px;
+    line-height: 1.1;
 }
 .flex-row{
     display: flex;
@@ -92,6 +101,18 @@ li{
 /*Home*/
 .home .grid{
     grid-template-columns: 10% 35% 10% 35% 10%
+}
+.home .main-raised{
+    margin: 0;
+}
+.home .title-content{
+    background: #FFffff;
+    text-align: center;
+    height: 500px;
+    margin-top: 86px;
+}
+.home .title-content .custom-logo{
+    max-width: 350px;
 }
 #a-la-une{
     grid-column-start: 2;

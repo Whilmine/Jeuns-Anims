@@ -20,17 +20,14 @@ if ( ! is_page_template() ) {
 		 * @hooked hestia_slider_section
 		 */
 		//do_action( 'hestia_header' ); ?>
+<div class="title-content">
+    <?php
+    if ( function_exists( 'the_custom_logo' ) ) {
+        the_custom_logo();
+    }
+    ?>
+</div>
 	    <div class="<?php echo esc_attr( hestia_layout() ); ?>">
-
-            <div>
-            <?php
-            if ( function_exists( 'the_custom_logo' ) ) {
-                the_custom_logo();
-            }
-            ?>
-            </div>
-
-
             <h2 class="titlefont white first-title border-title"> A la une </h2>
             <div class="grid">
                 <div  id="a-la-une" class="card">

@@ -28,11 +28,15 @@ get_header( "pages" );
         setup_postdata($post);
         ?>
     <div class="card" style="background-image: url('<?php the_post_thumbnail_url();?>')">
+        <a href="<?php echo the_permalink()?>">
+            <div class="card-content">
+                <span class="first-title-color fourth-title titlefont">
+                    <?php the_title(); ?>
+                </span>
 
-        <div class="card-content">
-            <?php the_title(); ?>
-            <?php the_excerpt(); ?>
-        </div>
+                <?php the_excerpt(); ?>
+            </div>
+        </a>
 
 
     </div>
