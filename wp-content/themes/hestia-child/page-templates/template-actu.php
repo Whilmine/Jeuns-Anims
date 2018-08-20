@@ -34,7 +34,10 @@ get_header( "pages" );
                     <?php the_title(); ?>
                 </span>
 
-                <?php the_excerpt(); ?>
+              <span class="second-title-color titlefont">
+                  <?php $date = get_post_custom_values("date");
+                    echo  $date[0];?>
+              </span>
             </div>
         </a>
 

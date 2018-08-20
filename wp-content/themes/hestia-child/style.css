@@ -36,6 +36,9 @@ h1.hestia-title, .main-title{
 .main{
     background: transparent;
 }
+.main-raised{
+    box-shadow: none;
+}
 li{
     list-style: none;
 }
