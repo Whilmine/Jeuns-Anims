@@ -42,7 +42,7 @@ if ( (bool) $hide_top_bar === false ) {
                 <a class="navbar-brand" ></a>
             </div>
         </div>
-        <div style="height: 2px; background-color: #FFffff"></div>
+        <div style="height: 2px; background-color: #FFffff; width: 80%"></div>
     </header>
 
         <?php do_action( 'hestia_do_header' ); ?>

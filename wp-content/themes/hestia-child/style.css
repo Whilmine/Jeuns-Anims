@@ -45,7 +45,15 @@ li{
 .btn.btn-primary{
     background-color:#009aa4 !important;
 }
-
+.home .navbar-fixed-top.navbar-not-transparent .navbar-nav > li > a{
+    color: green;
+}
+.home .navbar-default .navbar-nav > li > a, .main-template .navbar-default .navbar-nav > li > a{
+     color: white;
+ }
+.home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a{
+    color: white;
+}
 /**** Composants objets/**** */
 .titlefont {
     font-family: "Barlow Condensed";
