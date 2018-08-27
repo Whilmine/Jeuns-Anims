@@ -105,6 +105,9 @@ li{
 .grid{
     display: grid;
 }
+.absolute{
+    position: absolute;
+}
 .border-title{
     border-bottom: 3px solid white;
 }
@@ -121,6 +124,9 @@ li{
     text-align: center;
     height: 500px;
     margin-top: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .home .title-content .custom-logo{
     max-width: 350px;

@@ -78,5 +78,32 @@
 }
 #actualites .card:hover .card-content{
     visibility: visible;
+}
 
+#guitar-pic{
+    width:200px;
+    transform: rotate(0.075turn);
+    left: 80%;
+    bottom: 350px;
+}
+#tambour-pic{
+    width: 140px;
+    top: 500px;
+    left: 50%;
+}
+#note-pic{
+    width: 150px;
+    right: 10%;
+    top: 50px;
+}
+#saxo-pic{
+    width: 180px;
+    left: 10%;
+    top: 330px;
+}
+#trompette-pic{
+    width: 300px;
+    transform: rotate(-0.035turn);
+    left: 20%;
+    top: 160px;
 }
