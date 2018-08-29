@@ -36,6 +36,15 @@
 .main-template .container > .navbar-header{
    display: table-cell !important;
 }
+
+div.card{
+  margin-left: 5%;
+    margin-right: 5%;
+}
+div.grid div.card{
+    margin-left: auto;
+    margin-right: auto;
+}
 /***** Trombinoscope *****/
 #trombinoscope .card-wrapper{
     width: 30%;
@@ -68,6 +77,7 @@
     background-size: cover;
     overflow: hidden;
     margin-left: 35px;
+    padding: 0;
 }
 #actualites .card-content{
     visibility: hidden;
@@ -99,7 +109,7 @@
 #saxo-pic{
     width: 180px;
     left: 10%;
-    top: 330px;
+    top: 310px;
 }
 #trompette-pic{
     width: 300px;

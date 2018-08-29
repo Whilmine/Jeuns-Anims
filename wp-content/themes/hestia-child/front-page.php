@@ -63,15 +63,19 @@ if ( ! is_page_template() ) {
                            <!-- j'aimerais bien charger la petite tailles des images  ici  , mais j'y arrive pas momentanément-->
                            <span class="featured-img" style="background-image: url('<?php echo the_post_thumbnail_url()?>')"></span>
                            <span class="flex-column">
-                            <a class="titlefont white" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                            <p><?php the_excerpt() ?></p>
+                                <a class="titlefont white" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                                <p><?php the_excerpt() ?></p>
+                               <a href="<?php echo the_permalink();?>"> <span class="btn-shape">Lire la suite</span></a>
                            </span>
+
                        </li>
+
                         <?php
                         endwhile;
                         wp_reset_postdata();
                         ?>
                     </ul>
+                    Voir tout
                 </div>
             </div>
 
@@ -81,10 +85,10 @@ if ( ! is_page_template() ) {
             $name = $post->post_title;
             $img = get_the_post_thumbnail_url($post_id);
             ?>
-
+            <section id="team-part">
             <div>
                 <h2 class="titlefont white first-title border-title"><?php echo $name;?></h2>
-                <div class="card">
+                <div class="card auto-width">
                     <div class="flex-row">
                     <img src="<?php echo $img ?>">
                         <div class="flex-column">
@@ -109,9 +113,12 @@ if ( ! is_page_template() ) {
                     </div>
                 </div>
             </div>
+                <section id="team-part">
 
             <h2 class="titlefont white first-title border-title"> Contactez-nous</h2>
-            <div class="card"></div>
+            <div class="card auto-width">
+                Contact
+            </div>
 
 
 

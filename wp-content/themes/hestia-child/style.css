@@ -28,6 +28,10 @@ h1.hestia-title, .main-title{
     transition: all 0.2s ease-in-out;
     text-align: center;
 }
+.card{
+    overflow: hidden;
+    padding: 20px;
+}
 .card-content{
     padding: 5px 15px;
 }
@@ -76,7 +80,8 @@ li{
 .first-title{
     font-size: 100px;
     display: inline-flex;
-    padding-right: 50px;
+    padding-right: 40px;
+    margin: auto auto 25px 25px;
 }
 .secondary-title{
     font-size: 65px;
@@ -111,10 +116,13 @@ li{
 .border-title{
     border-bottom: 3px solid white;
 }
+.auto-width{
+    width: auto;
+}
 
 /*Home*/
 .home .grid{
-    grid-template-columns: 10% 35% 10% 35% 10%
+    grid-template-columns: 5% 40% 10% 40% 5%
 }
 .home .main-raised{
     margin: 0;
@@ -138,14 +146,21 @@ li{
 #otherevents{
     grid-column-start: 4;
 }
+#otherevents .moretag{
+    display: none;
+}
 #otherevents li:first-child{
     display: none;
 }
 #otherevents li{
     display: flex;
     max-height: 150px;
-    overflow: hidden;
     margin: 0 0 5%;
+}
+#otherevents li p{
+    overflow: hidden;
+    max-height: 95px;
+    margin: 0;
 }
 #otherevents .featured-img{
     height: 150px;
@@ -176,11 +191,23 @@ li{
    /* min-width: 100px;*/
     display:inline-block;
     padding: 5px 5px 5px 20px;
-    border:1px solid #c1c1c1;
 }
 
 #menu-association-menu > li.menu-item a{
     color:#fff;
     font-size:1rem;
     font-weight:bold;
+}
+
+.btn-shape{
+    background-color:var(--secondary-blue);
+    -webkit-clip-path:polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
+    /* min-width: 100px;*/
+    display:inline-block;
+    padding: 5px 10px 5px 40px;
+    color: #FFffff;
+    font-family: kelsonregular;
+    text-transform: uppercase;
+    font-size: 12px;
 }
