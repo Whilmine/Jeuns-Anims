@@ -22,8 +22,16 @@ get_header( "pages" );
 <div id="team" class="<?php echo hestia_layout(); ?>">
     <div class="flex-row flex-wrap">
         <div class="card">
-<?php
-	if ( have_posts() ) :
+            <span class="team-pic" style="background-image: url('<?php echo  get_the_post_thumbnail_url(54);?>')">
+            </span>
+            <span class="titlefont second-title-color secondary-title">    <?php
+            echo get_the_title(54);
+            ?>
+            </span>
+            <?php  echo  get_post_field('post_content', 54); ?>
+<?
+
+if ( have_posts() ) :
 				while ( have_posts() ) :
 					the_post();
 					get_template_part( 'template-parts/content', 'pagecustom' );

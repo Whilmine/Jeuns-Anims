@@ -16,9 +16,18 @@ get_header( "pages" );
 //do_action( 'hestia_before_single_page_wrapper' ); ?>
 
 <div id="contact" class="<?php echo hestia_layout(); ?>">
+    <img class="absolute" id="saxo-pic-contact" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/saxo.png">
+    <img class="absolute" id="fa-pic-contact" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/fa.png">
     <div class="flex-row flex-wrap">
         <div class="card">
-            <?php
+            <?php echo do_shortcode('[caldera_form id="CF5b8bbb16e2b9b"]');  ?>
+
+            <?
+            $shortcode =  "[contact-form-7 id='101' title='Contact form 1']";
+           echo do_shortcode($shortcode);
+            echo ["contact-form-7 id='101' title='Contact form 1'"];
+
+
             if ( have_posts() ) :
                 while ( have_posts() ) :
                     the_post();

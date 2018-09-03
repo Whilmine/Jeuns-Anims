@@ -58,6 +58,15 @@ li{
 .home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a{
     color: white;
 }
+.home a .btn-shape, .home .menu-item a{ color: white}
+.home a:hover{
+    color: white;
+}
+.card.auto-width img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
 /**** Composants objets/**** */
 .titlefont {
     font-family: "Barlow Condensed";
@@ -191,6 +200,7 @@ li{
     width: 50%;
     margin: auto ;
 }
+
 /****** Modification interface ****/
 .customize-partial-edit-shortcuts-shown *{
 }
@@ -204,21 +214,10 @@ li{
     justify-content: space-evenly;
 }
 
-#menu-association-menu > li.menu-item {
-    background-color:var(--main-blue);
-    -webkit-clip-path:polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
-    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
-    /* min-width: 100px;*/
-    display:inline-block;
-    padding: 5px 10px 5px 40px;
-    color: #FFffff;
-    font-family: kelsonregular;
-    text-transform: uppercase;
-    font-size: 12px;
-}
 
 
-.btn-shape{
+
+.btn-shape, #menu-association-menu > li.menu-item {
     background-color:var(--secondary-blue);
     -webkit-clip-path:polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
@@ -230,4 +229,19 @@ li{
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing:1.5px ;
+}
+.btn-shape:hover, #menu-association-menu > li.menu-item:hover{
+    background-color: #31bdc8;
+
+}
+.btn-shape:hover a, #menu-association-menu > li.menu-item:hover a  {
+    text-decoration: none;
+}
+#menu-association-menu > li.menu-item:first-child{
+    clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+    padding-right: 20px;
+}
+#menu-association-menu > li.menu-item:nth-child(2){
+    padding-left: 45px;
 }

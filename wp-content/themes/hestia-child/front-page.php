@@ -121,8 +121,14 @@ if ( ! is_page_template() ) {
                 <div class="team-container image">
                     <img src="<?php echo $img ?>">
                 </div>
-                <div class="first-title-color titlefont secondary-title">
-                    Contact & Questions
+                <div>
+                    <div class="first-title-color titlefont secondary-title">
+                        Contact & Questions
+                    </div>
+                    <span class="titlefont third-title">Des questions pour nous ?</span>
+                    <span class="btn-shape">
+                       Envoyer un message
+                    </span>
                 </div>
             </div>
                 </section>
