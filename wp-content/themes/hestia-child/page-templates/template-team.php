@@ -28,6 +28,8 @@ get_header( "pages" );
             echo get_the_title(54);
             ?>
             </span>
+
+
             <?php  echo  get_post_field('post_content', 54); ?>
 <?
 
@@ -47,4 +49,50 @@ if ( have_posts() ) :
 
     </div>
 
+    <section id="articles-about-us" >
+        <div class="card">
+            <h2> On parle de nous </h2>
+            <div class="my-slider">
+            <?php
+            $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
+            while ( $loop->have_posts() ) : $loop->the_post();
+                $meta = get_post_meta( $post->ID, 'your_fields', true );
+                ?>
+                <div class="card-wrapper">
+                        <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                            <h3 class='titlefont first-title-color'>
+                            <?php echo the_title();?>
+                            </h3>
+                        <?php echo the_content(); ?>
+                </div>
+            <?php
+            endwhile;
+            wp_reset_query();
+            ?>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/slick/slick.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.my-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear'
+            });
+        });
+    </script>
+
+
 	<?php get_footer(); ?>
+

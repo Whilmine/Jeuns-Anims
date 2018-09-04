@@ -38,8 +38,9 @@
 }
 
 div.card{
-  margin-left: 5%;
+    margin-left: 5%;
     margin-right: 5%;
+    max-width: 90%;
 }
 div.grid div.card{
     margin-left: auto;
@@ -179,3 +180,4 @@ div.grid div.card{
     background-repeat: no-repeat;
     background-size: contain;
 }
+#team
