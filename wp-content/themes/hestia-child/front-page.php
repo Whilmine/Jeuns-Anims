@@ -45,8 +45,12 @@ if ( ! is_page_template() ) {
                         <!-- dans l'autre cas , on affiche l'article le plus recent -->
                         <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
                             <img src="<?php echo the_post_thumbnail_url();?>">
-                            <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                            <p><?php the_excerpt() ?></p>
+                            <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
+                                <?php the_title(); ?>
+                            </a>
+                            <p>
+                                <?php the_excerpt() ?>
+                            </p>
                         <?php
                         endwhile;
                         wp_reset_postdata();

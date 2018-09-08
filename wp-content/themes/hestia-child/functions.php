@@ -101,8 +101,7 @@ function add_sub_menu() {
 // plusieurs menu
     register_nav_menus(
  array(
-'association-menu' => __( 'Menu vers Association' ),
- 'test-menu' => __( 'Menu Test Random' ),
+'association-menu' => __( 'Menu - Association' ),
  )
  );
 }
