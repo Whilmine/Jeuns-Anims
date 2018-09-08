@@ -77,6 +77,12 @@ li {
 .navbar-default{
     border-color: transparent;
 }
+.card img{
+    max-height: 400px;
+    width: auto;
+    display: block;
+    margin: auto;
+}
 .card.auto-width img {
     height: 100%;
     width: 100%;
@@ -167,7 +173,7 @@ li {
 
 /*Home*/
 .home .grid {
-    grid-template-columns: 5% 40% 10% 40% 5%
+    grid-template-columns: 7% 36% 7% 39% 8%;
 }
 
 .home .main-raised {
@@ -196,8 +202,11 @@ li {
 #home-a-la-une {
     grid-column-start: 2;
     grid-column-end: 3;
+    display: flex;
 }
-
+#home-a-la-une .card{
+    width: 500px;
+}
 
 #home-otherevents {
     grid-column-start: 4;
@@ -230,8 +239,8 @@ li {
 }
 
 #home-otherevents .featured-img {
-    height: 150px;
-    min-width: 150px;
+    height: 120px;
+    min-width: 120px;
     background-position: center;
     background-size: cover;
     margin: 5px 15px 5px 0;
@@ -312,12 +321,12 @@ li {
 }
 
 /*Menu HomePage*/
-#menu-association-menu {
+#menu-menu-jeuns-anims {
     display: flex;
     justify-content: space-evenly;
 }
 
-.btn-shape, #menu-association-menu > li.menu-item {
+.btn-shape, #menu-menu-jeuns-anims > li.menu-item {
     background-color: var(--secondary-blue);
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
@@ -331,22 +340,23 @@ li {
     letter-spacing: 1.5px;
 }
 
-.btn-shape:hover, #menu-association-menu > li.menu-item:hover {
+.btn-shape:hover, #menu-menu-jeuns-anims > li.menu-item:hover {
     background-color: #31bdc8;
 
 }
 
-.btn-shape:hover a, #menu-association-menu > li.menu-item:hover a {
+.btn-shape:hover a, #menu-menu-jeuns-anims > li.menu-item:hover a {
     text-decoration: none;
 }
 
-#menu-association-menu > li.menu-item:first-child {
+#menu-menu-jeuns-anims > li.menu-item:first-child {
     clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
     -webkit-clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+    padding-left: 50px;
     padding-right: 20px;
 }
 
-#menu-association-menu > li.menu-item:nth-child(2) {
+#menu-menu-jeuns-anims > li.menu-item:nth-child(2) {
     padding-left: 45px;
 }
 
@@ -460,11 +470,25 @@ div.grid div.card {
 }
 
 
+
+/* Page équipe  */
+.team-pic {
+    display: block;
+
+    max-width: 100%;
+    min-height: 450px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+
+/* Page contact */
 #contact .first-row {
     margin-top: 5px;
 }
 
-/* Page contact */
 #contact .caldera-grid .row {
     display: flex;
     justify-content: center;
@@ -511,15 +535,3 @@ div.grid div.card {
 
 }
 
-/* Page équipe  */
-.team-pic {
-    display: block;
-
-    max-width: 100%;
-    min-height: 450px;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-
-#team

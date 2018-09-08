@@ -22,15 +22,15 @@ get_header( "pages" );
 <div id="team" class="<?php echo hestia_layout(); ?>">
     <div class="flex-row flex-wrap">
         <div class="card">
-            <span class="team-pic" style="background-image: url('<?php echo  get_the_post_thumbnail_url(54);?>')">
+            <span class="team-pic" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
             </span>
             <span class="titlefont second-title-color secondary-title">    <?php
-            echo get_the_title(54);
+            echo get_the_title(16);
             ?>
             </span>
 
 
-            <?php  echo  get_post_field('post_content', 54); ?>
+            <?php  echo  get_post_field('post_content', 16); ?>
 <?
 
 if ( have_posts() ) :
@@ -48,13 +48,14 @@ if ( have_posts() ) :
         </div>
 
     </div>
-
+    <?php
+    $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
+    if ($loop->have_posts()):?>
     <section id="articles-about-us" >
         <div class="card">
             <h2> On parle de nous </h2>
             <div class="my-slider">
-            <?php
-            $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
+        <?php
             while ( $loop->have_posts() ) : $loop->the_post();
                 $meta = get_post_meta( $post->ID, 'your_fields', true );
                 ?>
@@ -72,6 +73,7 @@ if ( have_posts() ) :
             </div>
         </div>
     </section>
+    <?php endif;?>
 
 
 

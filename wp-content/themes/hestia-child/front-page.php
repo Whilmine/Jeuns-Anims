@@ -39,32 +39,38 @@ if ( ! is_page_template() ) {
             <section id="home-actualites">
                 <h2 class="titlefont white first-title border-title"> A la une </h2>
                 <div class="grid">
-                    <div  id="home-a-la-une" class="card">
-                        <!-- on affiche le dernier artcile de la catégorie "a la une" -->
-                        <?php $the_query_a_la_une = new WP_Query('posts_per_page=1','cat=4'); ?>
-                        <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
-                            <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
-                                <?php the_title(); ?>
-                            </a>
-                            <p>
-                                <?php the_excerpt() ?>
-                            </p>
-                        <?php endwhile; else: ?>
-                            <!-- si il n'y en a pas, on affiche l'article le plus récent-->
-                        <?php
-                            $the_query = new WP_Query( 'posts_per_page=1' ); ?>
-                            <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-                            <img src="<?php echo the_post_thumbnail_url();?>">
-                            <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
-                                <?php the_title(); ?>
-                            </a>
-                            <p>
-                                <?php the_excerpt() ?>
-                            </p>
-                        <?php
-                        endwhile;  endif;
-                        wp_reset_postdata();
-                        ?>
+                    <div id="home-a-la-une" class="card-wrapper">
+                        <div   class="card">
+                            <!-- on affiche le dernier artcile de la catégorie "a la une" -->
+
+                            <?php
+                                $args=array('posts_per_page' => 1,'post_type' => 'post','cat' => 4,);
+                            $the_query_a_la_une = new WP_Query($args); ?>
+                            <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
+                                <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
+                                    blllaaaaaaaaa
+                                    <?php the_title(); ?>
+                                </a>
+                                <p>
+                                    <?php the_excerpt() ?>
+                                </p>
+                            <?php endwhile; else: ?>
+                                <!-- si il n'y en a pas, on affiche l'article le plus récent-->
+                            <?php
+                                $the_query = new WP_Query( 'posts_per_page=1' ); ?>
+                                <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+                                <img src="<?php echo the_post_thumbnail_url();?>">
+                                <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                                <p>
+                                    <?php the_excerpt() ?>
+                                </p>
+                            <?php
+                            endwhile;  endif;
+                            wp_reset_postdata();
+                            ?>
+                        </div>
                     </div>
 
                     <?php $recentarticles = new WP_Query( 'posts_per_page=4' );
@@ -73,7 +79,7 @@ if ( ! is_page_template() ) {
                    if ($count >=2){
                     ?>
                     <div id="home-otherevents">
-                        <span class="secondary-title titlefont accentblue border-title">Les autres événements</span>
+                        <h3 class="secondary-title titlefont accentblue border-title">Les autres événements</h3>
                         <ul>
 
                             <!-- Pour le moment je n'ai pas réussi a dégager le premier post, donc je triche en le dégageant via le css
@@ -100,7 +106,7 @@ if ( ! is_page_template() ) {
                             wp_reset_postdata();
                             ?>
                         </ul>
-                        <div class="white border-title link-title">  Voir tout</div>
+                        <a href="<?php echo get_page_link(60)?>"><div class="white border-title link-title">  Voir tout</div></a>
                     </div>
                     <? } ?>
                 </div>
@@ -122,7 +128,7 @@ if ( ! is_page_template() ) {
                             <img src="<?php echo $img ?>">
                         </div>
                         <div class="flex-column team-container">
-                            <span class="first-title-color titlefont secondary-title">Jeun's Anims</span>
+                            <h3 class="first-title-color titlefont secondary-title">Jeun's Anims</h3>
                             <p>
                                 <?php echo $post->post_content;?>
                             </p>
