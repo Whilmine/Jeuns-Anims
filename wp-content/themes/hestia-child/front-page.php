@@ -79,17 +79,19 @@ if ( ! is_page_template() ) {
                             <!-- Pour le moment je n'ai pas réussi a dégager le premier post, donc je triche en le dégageant via le css
                             il faut compléter la fonction pour que si il y'a une article a la une on ne
                              dégage pas le premier, et que les articles de catégories a la une soit dégagés -->
-                            <?php while ($recentarticles -> have_posts()) : $recentarticles -> the_post(); ?>
-                           <li>
+                            <?php while ($recentarticles -> have_posts()) : $recentarticles -> the_post();
+                                $has_thumbnail = has_post_thumbnail();
+                                if ($has_thumbnail == false){ $style = "150px;";} else {$style="0px";}?>
+                           <li style="margin-left:<?php echo $style?>">
                                <?php if ( has_post_thumbnail()) : ?>
                                    <span class="featured-img" style="background-image: url('<?php echo the_post_thumbnail_url()?>')"></span>
-                               <?php endif;
-                               $test = has_post_thumbnail();
-                               if ($test == true){ echo 'thumbnaillll !';} else{echo 'uuuuk';} ; ?>
+                               <?php endif; ?>
 
                                <span class="flex-column">
-                                    <a class="titlefont white link-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
-                                    <p> <?php the_excerpt() ?></p>
+                                    <a class="titlefont white link-title" style="margin-left:-<?php  echo $style?>" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
+                                        <span style="margin-left: -<?php  echo $style?> padding-right:<?php  echo $style?> ">
+                                            <p style="margin-left:-<?php echo $style?>"> <?php the_excerpt() ?></p>
+                                        </span>
                                    <a href="<?php echo the_permalink();?>"> <span class="btn-shape">Lire la suite</span></a>
                                </span>
                            </li>
