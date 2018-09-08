@@ -239,7 +239,7 @@ li {
 
 #home-team .featured-img {
     max-width: 750px;
-    margin: -20px auto -20px -20px;
+    margin: -20px auto -21px -20px;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
 }

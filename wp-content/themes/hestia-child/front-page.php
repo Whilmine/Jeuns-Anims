@@ -36,14 +36,24 @@ if ( ! is_page_template() ) {
     <img class="absolute" id="trompette-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/trompette.png">
 </div>
 	    <div class="<?php echo esc_attr( hestia_layout() ); ?>">
-            <section id="a-la-une-part">
+            <section id="home-actualites">
                 <h2 class="titlefont white first-title border-title"> A la une </h2>
                 <div class="grid">
-                    <div  id="a-la-une" class="card">
-                        <?php $the_query = new WP_Query( 'posts_per_page=1' ); ?>
-                        <!-- Reste à écrire la condition : si un article existe dans la catégorie a la une, on l'affiche a la place -->
-                        <!-- dans l'autre cas , on affiche l'article le plus recent -->
-                        <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+                    <div  id="home-a-la-une" class="card">
+                        <!-- on affiche le dernier artcile de la catégorie "a la une" -->
+                        <?php $the_query_a_la_une = new WP_Query('posts_per_page=1','cat=4'); ?>
+                        <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
+                            <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
+                                <?php the_title(); ?>
+                            </a>
+                            <p>
+                                <?php the_excerpt() ?>
+                            </p>
+                        <?php endwhile; else: ?>
+                            <!-- si il n'y en a pas, on affiche l'article le plus récent-->
+                        <?php
+                            $the_query = new WP_Query( 'posts_per_page=1' ); ?>
+                            <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
                             <img src="<?php echo the_post_thumbnail_url();?>">
                             <a class="titlefont first-title-color third-title" href="<?php the_permalink() ?>">
                                 <?php the_title(); ?>
@@ -52,29 +62,37 @@ if ( ! is_page_template() ) {
                                 <?php the_excerpt() ?>
                             </p>
                         <?php
-                        endwhile;
+                        endwhile;  endif;
                         wp_reset_postdata();
                         ?>
                     </div>
 
-                    <div id="otherevents">
+                    <?php $recentarticles = new WP_Query( 'posts_per_page=4' );
+                     $count = $recentarticles->post_count;
+                     echo $count ;
+                   if ($count >=2){
+                    ?>
+                    <div id="home-otherevents">
                         <span class="secondary-title titlefont accentblue border-title">Les autres événements</span>
                         <ul>
-                            <?php $recentarticles = new WP_Query( 'posts_per_page=4' ); ?>
+
                             <!-- Pour le moment je n'ai pas réussi a dégager le premier post, donc je triche en le dégageant via le css
-                            il faut compléter la fonction pour que si il y'a une article a la une on ne dégage pas le premier, et que les articles de catégories a la une soit dégagés -->
+                            il faut compléter la fonction pour que si il y'a une article a la une on ne
+                             dégage pas le premier, et que les articles de catégories a la une soit dégagés -->
                             <?php while ($recentarticles -> have_posts()) : $recentarticles -> the_post(); ?>
                            <li>
-                               <!-- j'aimerais bien charger la petite tailles des images  ici  , mais j'y arrive pas momentanément-->
-                               <span class="featured-img" style="background-image: url('<?php echo the_post_thumbnail_url()?>')"></span>
+                               <?php if ( has_post_thumbnail()) : ?>
+                                   <span class="featured-img" style="background-image: url('<?php echo the_post_thumbnail_url()?>')"></span>
+                               <?php endif;
+                               $test = has_post_thumbnail();
+                               if ($test == true){ echo 'thumbnaillll !';} else{echo 'uuuuk';} ; ?>
+
                                <span class="flex-column">
                                     <a class="titlefont white link-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a>
                                     <p> <?php the_excerpt() ?></p>
                                    <a href="<?php echo the_permalink();?>"> <span class="btn-shape">Lire la suite</span></a>
                                </span>
-
                            </li>
-
                             <?php
                             endwhile;
                             wp_reset_postdata();
@@ -82,22 +100,23 @@ if ( ! is_page_template() ) {
                         </ul>
                         <div class="white border-title link-title">  Voir tout</div>
                     </div>
+                    <? } ?>
                 </div>
             </section>
 
 
             <?php // On revoie la de la page équipe
-            $post_id = 54;
+            $post_id = 16;
             $post = get_post( $post_id );
             $name = $post->post_title;
             $img = get_the_post_thumbnail_url($post_id);
             ?>
-            <section id="team-part">
+            <section id="home-team">
             <div>
                 <h2 class="titlefont white first-title border-title"><?php echo $name;?></h2>
                 <div class="card auto-width">
                     <div class="flex-row">
-                        <div class="team-container image">
+                        <div class="featured-img">
                             <img src="<?php echo $img ?>">
                         </div>
                         <div class="flex-column team-container">

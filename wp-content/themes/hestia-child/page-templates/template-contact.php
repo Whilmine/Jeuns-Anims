@@ -20,12 +20,7 @@ get_header( "pages" );
     <img class="absolute" id="fa-pic-contact" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/fa.png">
     <div class="flex-row flex-wrap">
         <div class="card">
-            <?php echo do_shortcode('[caldera_form id="CF5b8bbb16e2b9b"]');  ?>
-
-            <?
-            $shortcode =  "[contact-form-7 id='101' title='Contact form 1']";
-           echo do_shortcode($shortcode);
-            echo ["contact-form-7 id='101' title='Contact form 1'"];
+          <?php
 
 
             if ( have_posts() ) :
