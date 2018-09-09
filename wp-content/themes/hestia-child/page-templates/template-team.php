@@ -28,8 +28,6 @@ get_header( "pages" );
             echo get_the_title(16);
             ?>
             </span>
-
-
             <?php  echo  get_post_field('post_content', 16); ?>
 <?
 
@@ -37,9 +35,7 @@ if ( have_posts() ) :
 				while ( have_posts() ) :
 					the_post();
 					get_template_part( 'template-parts/content', 'pagecustom' );
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+					
 				endwhile;
 			else :
 				get_template_part( 'template-parts/content', 'none' );
