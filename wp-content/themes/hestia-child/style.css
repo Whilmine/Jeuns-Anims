@@ -1,0 +1,643 @@
+/*
+Theme Name: hestia-child
+Description: thème enfant Hestia
+Template: hestia
+*/
+@import "fonts/font.css";
+
+:root {
+    --main-blue: #01a7b4;
+    --secondary-blue: #009aa4;
+}
+
+/*Main settings*/
+.page-header.header-small .hestia-title {
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    font-weight: 300;
+}
+
+body {
+    background-color: var(--main-blue);
+}
+
+h1.hestia-title, .main-title {
+    letter-spacing: 2px;
+    max-width: 90%;
+    margin-bottom: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    text-align: center;
+}
+
+.card {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.card-content {
+    padding: 5px 15px;
+}
+
+/*Overwritting Theme parent*/
+.main {
+    background: transparent;
+}
+
+.main-raised {
+    box-shadow: none;
+}
+
+li {
+    list-style: none;
+}
+
+.btn.btn-primary {
+    background-color: #009aa4 !important;
+}
+
+.home .navbar-fixed-top.navbar-not-transparent .navbar-nav > li > a {
+    color: var(--secondary-blue);
+}
+
+.navbar:not(.navbar-transparent) li:not(.btn):hover > a {
+    color: #39eaf6 !important;
+}
+.navbar:not(.navbar-transparent) .dropdown-menu li:not(.btn):hover > a{
+    color: #07757e !important;
+}
+body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a:focus {
+    color: #07757e !important;
+}
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover{
+    background-color: transparent;
+}
+
+.home .navbar-default .navbar-nav > li > a, .main-template .navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
+    color: #07757e !important;
+}
+
+.home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a {
+    color: white;
+}
+
+.home a .btn-shape, .home .menu-item a {
+    color: white
+}
+
+.home a:hover {
+    color: white;
+}
+
+.navbar-default {
+    border-color: transparent;
+}
+
+.card img {
+    max-height: 400px;
+    width: auto;
+    display: block;
+    margin: auto;
+}
+
+.card.auto-width img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/**** Composants objets/**** */
+.titlefont {
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.first-title-color {
+    color: var(--secondary-blue)
+}
+
+.second-title-color {
+    color: #2cbbc4;
+}
+
+.accentblue {
+    color: #2afffa;
+}
+
+.white {
+    color: #ffffff;
+}
+
+.first-title {
+    font-size: 100px;
+    display: inline-flex;
+    padding-right: 40px;
+    margin: auto auto 25px 25px;
+}
+
+.secondary-title {
+    font-size: 65px;
+}
+
+.third-title {
+    font-size: 50px;
+}
+
+.fourth-title {
+    font-size: 28px;
+    line-height: 1.1;
+}
+
+.link-title {
+    font-size: 18px;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.justify-content {
+    justify-content: center;
+}
+
+.grid {
+    display: grid;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.border-title {
+    border-bottom: 2px solid white;
+}
+
+.auto-width {
+    width: auto;
+}
+@media screen and (max-width: 767px){
+    .first-title{
+        font-size: 60px;
+    }
+    .flex-row{
+        flex-wrap: wrap;
+    }
+    .secondary-title{
+        font-size: 50px;
+    }
+}
+
+    /*Home*/
+.home .grid {
+    grid-template-columns: 7% 36% 7% 39% 8%;
+}
+
+.home .main-raised {
+    margin: 0;
+}
+
+.home .title-content {
+    background: #FFffff;
+    text-align: center;
+    height: 500px;
+    margin-top: 86px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .title-content .custom-logo {
+    max-width: 350px;
+}
+
+#home-actualites {
+    margin-top: 25px;
+    font-family: kelsonregular;
+}
+
+#home-a-la-une {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+}
+
+#home-a-la-une .card {
+    width: 500px;
+}
+
+#home-otherevents {
+    grid-column-start: 4;
+}
+
+#home-otherevents .moretag {
+    display: none;
+}
+
+#home-otherevents li:first-child {
+    /* display: none;*/
+}
+
+#home-otherevents li {
+    display: flex;
+    max-height: 150px;
+    margin: 0 0 5%;
+}
+
+#home-otherevents li p {
+    overflow: hidden;
+    max-height: 95px;
+    margin: 0;
+    color: white;
+    font-family: kelsonlight;
+}
+
+#home-otherevents li a:not(.link-title) {
+    text-align: right;
+}
+
+#home-otherevents .featured-img, #team .featured-img {
+    height: 120px;
+    min-width: 120px;
+    background-position: center;
+    background-size: cover;
+    margin: 5px 15px 5px 0;
+}
+#home-team .featured-img{
+    max-width: 750px;
+}
+#home-team .featured-img, #home-contact .featured-img {
+
+    margin: -20px auto -21px -20px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
+    clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
+}
+
+#home-team .text-container, #home-contact .text-container {
+    width: 50%;
+    margin: auto;
+}
+#home-contact .featured-img {
+    max-width: 900px;
+    width: 900px;
+}
+    /*home  partie contact */
+#home-contact .btn-shape {
+    padding-left: 65px;
+    width: 230px;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+
+}
+
+@media screen and (max-width: 767px) {
+    .home .title-content .custom-logo {
+        max-width: 80%;
+    }
+    .home .grid{
+        grid-template-columns: 1% 98% 1%;
+    }
+    #home-otherevents{
+      }
+    #home-team .featured-img{
+        margin: 0;
+        clip-path: none;
+    }
+    #home-team .text-container, #home-contact .text-container{
+        width: 100%;
+        padding: 5px;
+    }
+}
+
+/* instruments sur home ***********/
+#guitar-pic {
+    width: 200px;
+    transform: rotate(0.075turn);
+    left: 80%;
+    top: 350px;
+}
+
+#tambour-pic {
+    width: 140px;
+    top: 500px;
+    left: 50%;
+}
+
+#note-pic {
+    width: 150px;
+    right: 10%;
+    top: 50px;
+}
+
+#saxo-pic {
+    width: 180px;
+    left: 10%;
+    top: 310px;
+}
+
+#saxo-pic-contact {
+    z-index: 2;
+    top: 0;
+}
+
+#fa-pic-contact {
+    z-index: 2;
+    width: 125px;
+    left: 85%;
+    bottom: 25%;
+}
+
+#trompette-pic {
+    width: 300px;
+    transform: rotate(-0.035turn);
+    left: 20%;
+    top: 160px;
+}
+
+@media screen and (max-width: 767px) {
+    #trompette-pic {
+        width: 180px;
+        left: 1%;
+        top: 200px;
+        transform: rotate(-0.075turn);
+    }
+    #note-pic{
+        width: 85px;
+        right: -1%;
+       top:100px;
+    }
+    #saxo-pic {
+        width: 120px;
+        left: 2%;
+        top: 97%;
+    }
+    #tambour-pic {
+        width: 70px;
+        top: 449px;
+        left: 46%;
+    }
+    #guitar-pic {
+        width: 115px;
+        transform: rotate(0.075turn);
+        left: 60%;
+        bottom: 10%;
+        top: auto;
+    }
+}
+
+/*Menu HomePage*/
+#menu-menu-jeuns-anims {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-shape, #menu-menu-jeuns-anims > li.menu-item {
+    background-color: var(--secondary-blue);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 17% 100%);
+    /* min-width: 100px;*/
+    display: inline-block;
+    padding: 5px 10px 5px 40px;
+    color: #FFffff;
+    font-family: kelsonregular;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.btn-shape:hover, #menu-menu-jeuns-anims > li.menu-item:hover {
+    background-color: #31bdc8;
+
+}
+
+.btn-shape:hover a, #menu-menu-jeuns-anims > li.menu-item:hover a {
+    text-decoration: none;
+}
+
+#menu-menu-jeuns-anims > li.menu-item:first-child {
+    clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+    -webkit-clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+#menu-menu-jeuns-anims > li.menu-item:nth-child(2) {
+    padding-left: 45px;
+}
+
+.main-template .navbar {
+    position: sticky;
+    margin-top: 0 !important;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+.main-template header {
+    height: 150px;
+}
+
+.main-template header .header {
+    height: 150px;
+}
+
+.main-template .main-raised {
+    margin: 0 30px 0;
+}
+
+.main-template .navbar {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+}
+
+.main-template .navbar li a {
+    text-transform: none;
+    font-family: kelsonlight;
+    font-size: 21px;
+}
+
+.container > .navbar-header {
+    display: none !important;
+}
+
+.home .navbar:not(.hestia_right) .navbar-collapse {
+    display: flex !important;
+    justify-content: center;
+}
+
+.main-template .container > .navbar-header {
+    display: table-cell !important;
+}
+
+div.card {
+    margin-left: 5%;
+    margin-right: 5%;
+    max-width: 90%;
+}
+
+div.grid div.card {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/***** Trombinoscope *****/
+#trombinoscope .card-wrapper {
+    width: 400px;
+    text-align: center;
+}
+
+#trombinoscope .card {
+    padding: 5% 5% 5% 5%;
+    margin-bottom: auto;
+}
+
+#trombinoscope .card img {
+    height: 250px;
+    width: auto;
+    object-fit: cover;
+}
+
+#trombinoscope .card-wrapper:nth-child(odd) {
+    margin: 0 10% auto 15%
+}
+
+#trombinoscope .card-wrapper:nth-child(2) {
+    margin-top: 200px;
+}
+
+#trombinoscope div.flex-row span {
+    position: absolute;
+    left: 55%;
+    height: 200px;
+}
+
+/***** Actualités *****/
+#actualites .card {
+    width: 275px;
+    height: 275px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    margin-left: 35px;
+    padding: 0;
+}
+
+#actualites .card-content {
+    visibility: hidden;
+    background: white;
+    height: 100px;
+    margin-top: 175px;
+    overflow: hidden;
+}
+
+#actualites a.card-link p {
+    color: var(--main-blue);
+}
+
+#actualites .card:hover .card-content {
+    visibility: visible;
+}
+
+/* Page équipe  */
+#team .text-container{
+    width: 50%;
+}
+#team .featured-img{
+    min-height:400px;
+    min-width: 600px;
+}
+#team #piano-pic{
+    width:200px;
+    z-index: 2;
+    left: 82%;
+    transform: rotate(16deg);
+    top: -19px;
+}
+/* Page contact */
+#contact .first-row {
+    margin-top: 5px;
+}
+
+#contact .caldera-grid .row {
+    display: flex;
+    justify-content: center;
+}
+
+#contact-part .card .secondary-title {
+    line-height: 70px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact .caldera-grid .col-sm-12 {
+    width: 80%;
+}
+
+#contact .caldera-grid .form-control {
+    border-radius: 5px;
+    box-shadow: 2px 0px 6px 1px rgba(1, 167, 180, 0.49);
+    margin-top: 5px;
+    border: transparent;
+}
+
+.form-group label.control-label {
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--main-blue);
+    font-size: 25px;
+}
+
+#contact .caldera-grid .col-sm-12 .form-group div {
+    text-align: center;
+}
+
+#contact .btn_submit {
+    background-color: var(--secondary-blue);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+
+}
+.slick-prev, .slick-next {
+    display: none !important;
+
+}
+.slick-initialized .slick-slide{
+    display: flex !important;
+}
+.slick-list{
+    width: 90%;
+    margin: auto 5%;
+}
+.slick-slide{
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.my-slider button{
+    background-color: white !important;
+    border-radius: 15px;
+    min-width: 20px;
+    font-size: 0;
+    padding: 0px;
+    height: 20px;
+}
+.slick-dots{
+    display: flex !important;
+}

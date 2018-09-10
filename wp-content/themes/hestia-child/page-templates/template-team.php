@@ -19,37 +19,31 @@ get_header( "pages" );
 
 
 
-<div id="team" class="<?php echo hestia_layout(); ?>">
-    <div class="flex-row flex-wrap">
-        <div class="card">
-            <span class="team-pic" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
-            </span>
-            <span class="titlefont second-title-color secondary-title">    <?php
-            echo get_the_title(16);
-            ?>
-            </span>
-            <?php  echo  get_post_field('post_content', 16); ?>
-<?
+<div class="<?php echo hestia_layout(); ?>">
+    <section id="team" class="flex-row flex-wrap">
+        <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png">
+        <div class="card auto-width">
+            <div class="flex-row">
+                <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
+                </div>
+                <div class="flex-column text-container">
+                    <span class="titlefont second-title-color secondary-title">    <?php
+                    echo get_the_title(16);
+                    ?>
+                    </span>
+                    <span> <?php  echo  get_post_field('post_content', 16); ?></span>
 
-if ( have_posts() ) :
-				while ( have_posts() ) :
-					the_post();
-					get_template_part( 'template-parts/content', 'pagecustom' );
-					
-				endwhile;
-			else :
-				get_template_part( 'template-parts/content', 'none' );
-			endif;
-			?>
+                </div>
+            </div>
         </div>
-
-    </div>
+    </section>
     <?php
     $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
     if ($loop->have_posts()):?>
+
     <section id="articles-about-us" >
-        <div class="card">
-            <h2> On parle de nous </h2>
+        <h2 class="secondary-title titlefont accentblue border-title"> On parle de nous </h2>
+        <div 
             <div class="my-slider">
         <?php
             while ( $loop->have_posts() ) : $loop->the_post();
@@ -70,7 +64,25 @@ if ( have_posts() ) :
         </div>
     </section>
     <?php endif;?>
+    <section id="photo-gallery" >
+        <h2 class="secondary-title titlefont accentblue border-title"> Les photos </h2>
 
+        <?php
+        $count = 0;
+        foreach ( get_gallery() as $attachment ) :
+            $count ++;
+        ?>
+
+
+            <img src="<?php echo $attachment->thumb_url?>"
+                 alt="<?php echo $attachment->alt ?>"
+            />
+        <?php         echo $attachment->url ?>
+
+
+        <?php if ($count > 8){ break;}
+        endforeach ?>
+    </section>
 
 
 

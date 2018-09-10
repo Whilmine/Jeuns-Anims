@@ -38,12 +38,12 @@ get_header( "pages" );
                         <span class="first-title-color fourth-title titlefont">
                             <?php the_title(); ?>
                         </span>
-                        <span class="second-title-color titlefont">
+                        <span class="second-title-color titlefont link-title" >
                               <?php $date = get_post_custom_values("date");
                                 echo  $date[0];?>
                          </span>
                         <?php if (has_post_thumbnail()): echo ""; else:?>
-                            <span>
+                            <span style="font-size:13px ">
                                 <?php the_excerpt()?>
                             </span> <?php endif; ?>
                     </div>
