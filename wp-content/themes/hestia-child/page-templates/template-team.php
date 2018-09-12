@@ -27,9 +27,7 @@ get_header( "pages" );
                 <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
                 </div>
                 <div class="flex-column text-container">
-                    <span class="titlefont second-title-color secondary-title">    <?php
-                    echo get_the_title(16);
-                    ?>
+                    <span class="titlefont second-title-color secondary-title">  L'équipe
                     </span>
                     <span> <?php  echo  get_post_field('post_content', 16); ?></span>
 

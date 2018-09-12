@@ -235,13 +235,21 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     grid-column-end: 3;
     display: flex;
 }
-
+#home-a-la-une a:hover{
+    opacity: 1;
+}
 #home-a-la-une .card {
     width: 500px;
 }
 
 #home-otherevents {
     grid-column-start: 4;
+}
+#home-otherevents a:hover {
+    text-decoration: none;
+}
+#home-otherevents ul a:hover div {
+opacity: 0.75;
 }
 
 #home-otherevents .moretag {
@@ -443,7 +451,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .main-template .navbar {
     position: sticky;
     margin-top: 0 !important;
-    margin-bottom: 0;
+    margin-bottom: 20px;
     font-size: 20px;
 }
 
@@ -527,6 +535,17 @@ div.grid div.card {
 }
 
 /***** Actualités *****/
+#actualites a:hover {
+    opacity: 1 ;
+}
+#actualites a::before{
+    background-color: #FFffff;
+    display: block;
+    z-index: 2;
+}
+#actualites a:hover .card{
+    box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
 #actualites .card {
     width: 275px;
     height: 275px;
@@ -629,6 +648,10 @@ div.grid div.card {
     background: white;
     border-radius: 10px;
     overflow: hidden;
+}
+.slick-slide img{
+    min-width: 500px;
+    max-width: 500px;
 }
 .my-slider button{
     background-color: white !important;
