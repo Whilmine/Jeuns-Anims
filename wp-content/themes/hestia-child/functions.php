@@ -102,6 +102,8 @@ function add_sub_menu() {
     register_nav_menus(
  array(
 'association-menu' => __( 'Menu - Association' ),
+'footer-menu' => __('Menu - Footer'),
+'legals-menu' => __('Menu - Légaux'),
  )
  );
 }
@@ -195,6 +197,16 @@ function show_your_meta_box() {
 
 
 <?php }
+
+register_sidebar( array(
+    'name' => __( 'Sidebar blog', 'appliance' ),
+    'id' => 'blog_sidebar',
+    'description' => __( 'La sidebar du blog', 'appliance'),
+    'before_widget' => '<div id="header_blog">',
+    'after_widget' => '</div>',
+    'before_title' => '',
+    'after_title' => '',
+) );
 
 
 ?>

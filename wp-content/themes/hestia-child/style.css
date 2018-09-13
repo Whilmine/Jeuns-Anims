@@ -1,5 +1,5 @@
 /*
-Theme Name: hestia-child
+Theme Name: Jeun's Anims
 Description: thème enfant Hestia
 Template: hestia
 */
@@ -8,6 +8,8 @@ Template: hestia
 :root {
     --main-blue: #01a7b4;
     --secondary-blue: #009aa4;
+    --noir:#333;
+    --noir-rgb:51,51,51;
 }
 
 /*Main settings*/
@@ -83,7 +85,12 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a {
     color: white;
 }
-
+.navbar .navbar-nav > li:hover > .dropdown-menu, .navbar .navbar-nav > li > .dropdown-menu{
+    margin-right: -41px;
+}
+.navbar .dropdown-menu li:hover > a{
+    color: #25bab6 !important;
+}
 .home a .btn-shape, .home .menu-item a {
     color: white
 }
@@ -107,6 +114,11 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+@media screen and (max-width: 767px) {
+    .home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a {
+        color:#555;
+    }
 }
 
 /**** Composants objets/**** */
@@ -170,11 +182,12 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .flex-wrap {
     flex-wrap: wrap;
 }
-
+.text-justify{
+    text-align: justify;
+}
 .justify-content {
     justify-content: center;
 }
-
 .grid {
     display: grid;
 }
@@ -190,19 +203,22 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .auto-width {
     width: auto;
 }
-@media screen and (max-width: 767px){
-    .first-title{
+
+@media screen and (max-width: 767px) {
+    .first-title {
         font-size: 60px;
     }
-    .flex-row{
+
+    .flex-row {
         flex-wrap: wrap;
     }
-    .secondary-title{
+
+    .secondary-title {
         font-size: 50px;
     }
 }
 
-    /*Home*/
+/*Home*/
 .home .grid {
     grid-template-columns: 7% 36% 7% 39% 8%;
 }
@@ -235,21 +251,40 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     grid-column-end: 3;
     display: flex;
 }
-#home-a-la-une a:hover{
-    opacity: 1;
+#home-a-la-une .btn-shape{
+    margin-right: 20px;
+    margin-left: auto;
+    display: block;
+    width: 150px;
+    padding-left: 45px;
 }
+
+#home-a-la-une a:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
 #home-a-la-une .card {
     width: 500px;
+}
+
+#home-a-la-une a {
+    color: inherit;
+}
+#home-a-la-une .moretag{
+    display: none;
 }
 
 #home-otherevents {
     grid-column-start: 4;
 }
+
 #home-otherevents a:hover {
     text-decoration: none;
 }
+
 #home-otherevents ul a:hover div {
-opacity: 0.75;
+    opacity: 0.75;
 }
 
 #home-otherevents .moretag {
@@ -288,6 +323,7 @@ opacity: 0.75;
 #home-team .featured-img{
     max-width: 750px;
 }
+
 #home-team .featured-img, #home-contact .featured-img {
 
     margin: -20px auto -21px -20px;
@@ -390,9 +426,9 @@ opacity: 0.75;
        top:100px;
     }
     #saxo-pic {
-        width: 120px;
+        width: 26%;
         left: 2%;
-        top: 97%;
+        top: 66%;
     }
     #tambour-pic {
         width: 70px;
@@ -400,10 +436,10 @@ opacity: 0.75;
         left: 46%;
     }
     #guitar-pic {
-        width: 115px;
+        width: 25%;
         transform: rotate(0.075turn);
         left: 60%;
-        bottom: 10%;
+        bottom: 2%;
         top: auto;
     }
 }
@@ -536,16 +572,13 @@ div.grid div.card {
 
 /***** Actualités *****/
 #actualites a:hover {
-    opacity: 1 ;
+    opacity: 1;
 }
-#actualites a::before{
-    background-color: #FFffff;
-    display: block;
-    z-index: 2;
-}
-#actualites a:hover .card{
+
+#actualites a:hover .card {
     box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
 }
+
 #actualites .card {
     width: 275px;
     height: 275px;
@@ -563,7 +596,14 @@ div.grid div.card {
     margin-top: 175px;
     overflow: hidden;
 }
-
+#actualites .no_thumbnail {
+    font-size: 11px;
+    font-family: kelsonregular;
+    color: #0f9aa4;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+}
 #actualites a.card-link p {
     color: var(--main-blue);
 }
@@ -573,21 +613,41 @@ div.grid div.card {
 }
 
 /* Page équipe  */
-#team .text-container{
+#team .text-container {
     width: 50%;
 }
-#team .featured-img{
-    min-height:400px;
+
+#team .featured-img {
+    min-height: 400px;
     min-width: 600px;
 }
-#team #piano-pic{
-    width:200px;
+
+#team #piano-pic {
+    width: 200px;
     z-index: 2;
     left: 82%;
     transform: rotate(16deg);
     top: -19px;
 }
-/* Page contact */
+#photo-gallery .grid{
+    grid-template-columns: 150px 150px 150px;
+    grid-column-gap: 15px;
+    grid-row-gap: 15px;
+    min-width: 515px;
+}
+#photo-gallery .gallery-img{
+    border-radius: 10px;
+    margin-left: 20px;
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+#photo-gallery .card{
+    background-color: transparent;
+    box-shadow: none;
+}
+
+    /* Page contact */
 #contact .first-row {
     margin-top: 5px;
 }
@@ -633,27 +693,33 @@ div.grid div.card {
     color: white;
 
 }
+
 .slick-prev, .slick-next {
     display: none !important;
 
 }
-.slick-initialized .slick-slide{
+
+.slick-initialized .slick-slide {
     display: flex !important;
 }
-.slick-list{
+
+.slick-list {
     width: 90%;
     margin: auto 5%;
 }
-.slick-slide{
+
+.slick-slide {
     background: white;
     border-radius: 10px;
     overflow: hidden;
 }
-.slick-slide img{
+
+.slick-slide img {
     min-width: 500px;
     max-width: 500px;
 }
-.my-slider button{
+
+.my-slider button {
     background-color: white !important;
     border-radius: 15px;
     min-width: 20px;
@@ -661,6 +727,80 @@ div.grid div.card {
     padding: 0px;
     height: 20px;
 }
-.slick-dots{
+
+.slick-dots {
     display: flex !important;
+}
+
+
+/*Menu FOOTER*/
+#menu-menu-footer li a:hover,#menu-menu-footer li a:focus{
+color:var(--main-blue);
+}
+
+#menu-menu-footer li a {
+    position:relative;
+    line-height:100%;
+    /*sinon les a en tant que tag sont bien plus grands que le texte*/
+}
+#menu-menu-footer li a::after{
+    content: '';
+    display: inline-block;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0;
+    height:2px;
+    background:var(--main-blue);
+    transition: all 0.35s ease-in-out;
+}
+#menu-menu-footer li a:hover::after{
+    width:100%;
+}
+
+.footer_col--title{
+display: inline-block;
+padding-left: 5px;
+border: 2px solid white;
+border-radius:0 0 0 8px;
+}
+
+/*Mentions Legales*/
+#mentions-legales{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.top-bg{
+    width:100%;
+    min-height:500px;
+    background-attachment: fixed;
+    background-size:cover;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Contenu*/
+.ml_content{
+    margin-left:5%;
+    margin-right:5%;
+    padding: 50px 0;
+}
+
+/*Specs*/
+#mentions-legales h1{
+    text-align: center;
+    text-decoration: underline;
+}
+#mentions-legales .sub-title{
+    font-size:1.5rem;
+    color:var(--noir);
+    text-decoration: underline;
+    margin-bottom:10px;
+}
+#mentions-legales a{
+    color:white;
+    font-style:italic;
+    font-weight:bold;
 }

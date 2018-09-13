@@ -39,50 +39,59 @@ if ( ! is_page_template() ) {
             <section id="home-actualites">
                 <h2 class="titlefont white first-title border-title"> A la une </h2>
                 <div class="grid">
+
                     <div id="home-a-la-une" class="card-wrapper">
                         <?php
                         $args=array('posts_per_page' => 1,'post_type' => 'post','category_name' => "a-la-une");
                         $the_query_a_la_une = new WP_Query($args); ?>
                         <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
-                        <a href="<?php the_permalink()?>">
+
+                            <a href="<?php the_permalink() ?>">
                             <div class="card">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php echo the_post_thumbnail_url()?>">
                                 <? endif;?>
-                                <div>
+                                <div style="padding: 0 25px 10px" class="text-justify">
                                     <span class="titlefont first-title-color third-title">
                                         <?php the_title(); ?>
                                     </span>
-                                    <p>
+                                    <p style="margin-top: -10px">
+                                        <?php the_excerpt() ?>
+                                    </p>
+                                </div>
+                                <span class="btn-shape">Lire la suite</span>
+                            </div>
+                        </a>
+
+
+                        <?php endwhile;
+                        else:
+                        // si il n'y en a pas, on affiche l'article le plus récent
+                        $the_query = new WP_Query( 'posts_per_page=1' ); ?>
+                        <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+
+                         <a href="<?php the_permalink()?>">
+                             <div class="card">
+                                <?php if (has_post_thumbnail()) : ?>
+                                    <img src="<?php echo the_post_thumbnail_url()?>">
+                                <? endif;?>
+                                 <div style="padding: 0 25px 10px" class="text-justify">
+                                    <span class="titlefont first-title-color third-title">
+                                            <?php the_title(); ?>
+                                    </span>
+                                     <p style="margin-top: -10px">
                                         <?php the_excerpt() ?>
                                     </p>
                                 </div>
                             </div>
-                        </a>
-
-                        <?php endwhile; else:
-                        // si il n'y en a pas, on affiche l'article le plus récent
-                        $the_query = new WP_Query( 'posts_per_page=1' ); ?>
-                        <?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-                        <a href="<?php the_permalink()?>">
-                            <div class="card">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <img src="<?php echo the_post_thumbnail_url()?>">
-                                <? endif;?>
-                                <div>
-                                    <span class="titlefont first-title-color third-title">
-                                            <?php the_title(); ?>
-                                        </span>
-                                    <p>
-                                        <?php the_excerpt() ?>
-                                    </p>
-                                </div>
-                                <?php endwhile; endif;?>
-                                </div>
-                        </a>
-                        <?php
+                             <a href="<?php the_permalink()?>">
+                                 <span class="btn-shape">Lire la suite</span>
+                             </a>
+                         </a>
+                        <?php endwhile; endif;
                         wp_reset_postdata();?>
-                   
+                    </div>
+
 
                     <?php
                     $recentarticles_full = new WP_Query( array('posts_per_page=3', 'cat' => 4 ) );
