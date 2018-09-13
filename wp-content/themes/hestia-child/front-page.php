@@ -210,25 +210,13 @@ if ( ! is_page_template() ) {
                                 <h3 class="first-title-color titlefont secondary-title">Contact & Questions</h3>
 
                                 <span style="margin-bottom: 15px" class="second-title-color titlefont third-title">Des questions pour nous ?</span>
-                                <a href="//contact"><span class="btn-shape">Envoyer un message</span></a>
+                                <a href="<? get_site_url()?>/contact"><span class="btn-shape">Envoyer un message</span></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <script>
-               // function() {
-                //
-                //}
-               jQuery(document).ready(function($) {
-                    console.log( "ready!" );
-                   $('body').removeClass('menu-open');
-               });
-
-            </script>
-
-
-<?php
+          <?php
 
     $loop = new WP_Query( array( 'post_type' => 'members','category_name' =>'membre-du-bureau',  'posts_per_page' => '10' ) ); ?>
         <?php

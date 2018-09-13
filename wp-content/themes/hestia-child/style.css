@@ -131,6 +131,13 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
         transition: 0.15s all ease-in;
     }
 }
+@media screen and (min-width: 767px) {
+    .home .navbar:not(.hestia_right) .navbar-collapse {
+        display: flex !important;
+        justify-content: center;
+    }
+
+}
 
 /**** Composants objets/**** */
 .titlefont {
@@ -308,16 +315,14 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     display: none;
 }
 
-#home-otherevents li:first-child {
-    /* display: none;*/
-}
-
 #home-otherevents li {
     display: flex;
     max-height: 150px;
     margin: 0 0 5%;
 }
-
+#home-otherevents a:hover .border-title{
+    border-bottom: solid 2px rgba(255, 255, 255, 0.81);
+}
 #home-otherevents li p {
     overflow: hidden;
     max-height: 95px;
@@ -390,7 +395,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
         width: 100vw;
     }
     #home-a-la-une{
-        display: block;
+        display: flex;
         width: 98%;
     }
     #home-otherevents{
@@ -409,6 +414,29 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     #home-a-la-une .card-wrapper .text-justify .titlefont{
         padding-top: 10px;
         display: block;
+    }
+    #home-otherevents h3{
+        margin-left: 25px;
+    }
+    #home-otherevents ul{
+        margin: 10px auto auto;
+        padding: 0;
+        width: 95%;
+    }
+    #home-otherevents .border-title.link-title{
+        margin-left: 25px;
+    }
+    #menu-menu-jeuns-anims{
+        padding: 0;
+    }
+    #menu-menu-jeuns-anims > li.menu-item:first-child{
+        padding-left: 40px;
+        padding-right: 20px;
+        margin-left: -20px;
+    }
+    #home-contact .featured-img{
+        clip-path: none;
+        -webkit-clip-path:none;
     }
 }
 
@@ -470,9 +498,10 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
        top:100px;
     }
     #saxo-pic {
-        width: 26%;
-        left: 2%;
-        top: 66%;
+        width: 80px;
+        left: 25px;
+        top: auto;
+        bottom: 39px;
     }
     #tambour-pic {
         width: 70px;
@@ -483,7 +512,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
         width: 25%;
         transform: rotate(0.075turn);
         left: 60%;
-        bottom: 2%;
+        bottom: 15px;
         top: auto;
     }
 }
@@ -566,11 +595,6 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 
 .container > .navbar-header {
     display: none !important;
-}
-
-.home .navbar:not(.hestia_right) .navbar-collapse {
-    display: flex !important;
-    justify-content: center;
 }
 
 .main-template .container > .navbar-header {
