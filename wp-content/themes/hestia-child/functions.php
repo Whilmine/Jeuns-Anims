@@ -25,18 +25,19 @@ function slick_slider_js(){
 add_action( 'wp_enqueue_scripts', 'slick_slider_js' );
 
 
-function codex_custom_init() {
+function article_about_us() {
 
     register_post_type(
         'articles-about-us', array(
             'labels' => array('name' => __( 'On parle de nous' ), 'singular_name' => __( 'Article' ),'all_items' =>__('Tout les articles'),'add_new' => __( 'Ajouter un article'), 'add_new_item' => __( 'Ajouter un nouvel article') ),
+            'menu_icon'           => 'dashicons-media-text',
             'public' => true,
             'has_archive' => true,
             'supports' => array('title', 'editor', 'thumbnail')
         )
     );
 }
-add_action( 'init', 'codex_custom_init' );
+add_action( 'init', 'article_about_us' );
 
 
 function wpm_custom_post_type() {
@@ -66,6 +67,7 @@ function wpm_custom_post_type() {
     $args = array(
         'label'               => __( "Membres de l'association"),
         'description'         => __( "Tous les membres de l'association"),
+        'menu_icon'           => 'dashicons-admin-users',
         'labels'              => $labels,
         // On définit les options disponibles dans l'éditeur de notre custom post type ( un titre, un auteur...)
         'supports'            => array( 'title', 'editor','thumbnail','custom-fields', 'revisions' ),
@@ -114,7 +116,7 @@ add_action( 'init', 'add_sub_menu' );
     function Memberfield_box() {
     add_meta_box(
         'member_field', // $id
-        'Status', // $title
+        'Statut', // $title
         'show_your_fields_meta_box', // $callback
         'members', // $screen
         'normal', // $context
@@ -202,7 +204,7 @@ register_sidebar( array(
     'name' => __( 'Sidebar blog', 'appliance' ),
     'id' => 'blog_sidebar',
     'description' => __( 'La sidebar du blog', 'appliance'),
-    'before_widget' => '<div id="header_blog">',
+    'before_widget' => '<div id="sidebar_blog_div">',
     'after_widget' => '</div>',
     'before_title' => '',
     'after_title' => '',

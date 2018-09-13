@@ -24,7 +24,7 @@ get_header( "pages" );
 
 
     <?php
-    $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
+   $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
   <?php
   $compteur = 0;
     while ( $loop->have_posts() ) : $loop->the_post();

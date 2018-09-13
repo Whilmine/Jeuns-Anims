@@ -40,12 +40,13 @@ get_header( "pages" );
                             <span class="first-title-color fourth-title titlefont">
                                 <?php the_title(); ?>
                             </span>
+                            <br/>
                             <span class="second-title-color titlefont" style="font-size: 25px; margin-top: 5px" >
                                   <?php $date = get_post_custom_values("date");
                                     echo  $date[0];?>
                              </span>
                             <?php if (has_post_thumbnail()): echo ""; else:?>
-                                <span style="font-size:13px ">
+                                <span  class="no_thumbnail">
                                     <?php the_excerpt()?>
                                 </span> <?php endif; ?>
                         </div>

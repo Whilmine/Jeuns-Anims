@@ -3,7 +3,7 @@ Theme Name: Jeun's Anims
 Description: thème enfant Hestia
 Template: hestia
 */
-@import "fonts/font.css";
+@import "/wp-content/themes/hestia-child/fonts/font.css";
 
 :root {
     --main-blue: #01a7b4;
@@ -88,6 +88,9 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .navbar .navbar-nav > li:hover > .dropdown-menu, .navbar .navbar-nav > li > .dropdown-menu{
     margin-right: -41px;
 }
+.main-template .navbar .navbar-nav > li:hover > .dropdown-menu, .main-template .navbar .navbar-nav > li > .dropdown-menu{
+    margin-right:-3px;
+}
 .navbar .dropdown-menu li:hover > a{
     color: #25bab6 !important;
 }
@@ -118,6 +121,14 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 @media screen and (max-width: 767px) {
     .home .navbar-fixed-top.navbar-transparent .navbar-nav > li > a {
         color:#555;
+    }
+    .home .navbar:not(.hestia_right) .navbar-collapse{
+        display: none !important;
+    }
+
+    .home .navbar:not(.hestia_right) .navbar-collapse.in {
+        display: flex !important;
+        transition: 0.15s all ease-in;
     }
 }
 
@@ -216,6 +227,10 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     .secondary-title {
         font-size: 50px;
     }
+    .third-title{
+        font-size: 35px;
+        line-height: 35px;
+    }
 }
 
 /*Home*/
@@ -245,7 +260,6 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     margin-top: 25px;
     font-family: kelsonregular;
 }
-
 #home-a-la-une {
     grid-column-start: 2;
     grid-column-end: 3;
@@ -273,6 +287,9 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 }
 #home-a-la-une .moretag{
     display: none;
+}
+#home-a-la-une .card-wrapper .text-justify{
+    padding: 0 25px 10px;
 }
 
 #home-otherevents {
@@ -326,7 +343,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 
 #home-team .featured-img, #home-contact .featured-img {
 
-    margin: -20px auto -21px -20px;
+    margin: 0 auto 0;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
 }
@@ -334,16 +351,30 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 #home-team .text-container, #home-contact .text-container {
     width: 50%;
     margin: auto;
+    padding: 0px 40px;
+    text-align: center;
+}
+#home-team h3{
+    text-align: left;
+}
+#home-team .text-container {
+    text-align: justify;
 }
 #home-contact .featured-img {
     max-width: 900px;
     width: 900px;
+    margin: 0;
+    clip-path: polygon(0% 0%, 97% 1%, 78% 99%, 0% 100%);
+    -webkit-clip-path: polygon(0% 0%, 97% 1%, 78% 99%, 0% 100%);
+
 }
     /*home  partie contact */
 #home-contact .btn-shape {
     padding-left: 65px;
     width: 230px;
+    margin: 0 100px;
 }
+
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
 
@@ -354,7 +385,13 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
         max-width: 80%;
     }
     .home .grid{
-        grid-template-columns: 1% 98% 1%;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100vw;
+    }
+    #home-a-la-une{
+        display: block;
+        width: 98%;
     }
     #home-otherevents{
       }
@@ -365,6 +402,13 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     #home-team .text-container, #home-contact .text-container{
         width: 100%;
         padding: 5px;
+    }
+    #home-a-la-une .card-wrapper .text-justify{
+        padding: 0 10px 10px;
+    }
+    #home-a-la-une .card-wrapper .text-justify .titlefont{
+        padding-top: 10px;
+        display: block;
     }
 }
 
@@ -489,6 +533,11 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     margin-top: 0 !important;
     margin-bottom: 20px;
     font-size: 20px;
+}
+.main-template .navbar.navbar-not-transparent.navbar-scroll-point{
+    background-color: #f8f8f8;
+    -webkit-box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 10px -6px rgba(0, 0, 0, 0.42), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px -2px rgba(0, 0, 0, 0.1);
 }
 
 .main-template header {
@@ -641,6 +690,13 @@ div.grid div.card {
     height: 150px;
     width: 150px;
     object-fit: cover;
+}
+#photo-gallery .image-container{
+    width: 100%;
+    height: 500px;
+}
+#photo-gallery .image-container img{
+    border-radius: 15px;
 }
 #photo-gallery .card{
     background-color: transparent;
@@ -804,3 +860,4 @@ border-radius:0 0 0 8px;
     font-style:italic;
     font-weight:bold;
 }
+

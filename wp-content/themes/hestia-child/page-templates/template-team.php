@@ -63,27 +63,31 @@ get_header( "pages" );
     </section>
     <?php endif;?>
     <section id="photo-gallery" >
-        <h2 class="secondary-title titlefont accentblue border-title"> Les photos </h2>
+        <div class="card">
+            <h2 class="secondary-title titlefont accentblue border-title"> Les photos </h2>
+            <div class=" flex-row">
+                <div class="grid">
+                    <?php
+                    $count = 0;
+                    foreach ( get_gallery() as $attachment ) :
+                        $count ++;
+                    ?>
+                        <img class="gallery-img" id="gallery_image_<?php echo $count ?>" src="<?php echo $attachment->thumb_url?>" onmouseover="bigImg(this)">
 
-        <?php
-        $count = 0;
-        foreach ( get_gallery() as $attachment ) :
-            $count ++;
-        ?>
+                        <img  id="gallery_image_<?php echo $count ?>_large" src="<?php echo $attachment->large_url?>" style="display: none;"/>
+                    <?php
+                    if ($count > 8){ break;}
+                    endforeach ?>
+                </div>
+                <div class="image-container flex-row">
+                    <img id="featuredimg"/>
+                </div>
 
-
-            <img src="<?php echo $attachment->thumb_url?>"
-                 alt="<?php echo $attachment->alt ?>"
-            />
-        <?php         echo $attachment->url ?>
-
-
-        <?php if ($count > 8){ break;}
-        endforeach ?>
+            </div>
+        </div>
     </section>
 
-
-
+    <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/js/displaythegallery.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/slick/slick.min.js"></script>

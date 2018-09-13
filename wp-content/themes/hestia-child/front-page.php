@@ -46,12 +46,12 @@ if ( ! is_page_template() ) {
                         $the_query_a_la_une = new WP_Query($args); ?>
                         <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
 
-                            <a href="<?php the_permalink() ?>">
+
                             <div class="card">
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php echo the_post_thumbnail_url()?>">
                                 <? endif;?>
-                                <div style="padding: 0 25px 10px" class="text-justify">
+                                <div class="text-justify">
                                     <span class="titlefont first-title-color third-title">
                                         <?php the_title(); ?>
                                     </span>
@@ -59,9 +59,9 @@ if ( ! is_page_template() ) {
                                         <?php the_excerpt() ?>
                                     </p>
                                 </div>
-                                <span class="btn-shape">Lire la suite</span>
+                                <a href="<?php the_permalink() ?>">  <span class="btn-shape">Lire la suite</span>  </a>
+
                             </div>
-                        </a>
 
 
                         <?php endwhile;
@@ -75,7 +75,7 @@ if ( ! is_page_template() ) {
                                 <?php if (has_post_thumbnail()) : ?>
                                     <img src="<?php echo the_post_thumbnail_url()?>">
                                 <? endif;?>
-                                 <div style="padding: 0 25px 10px" class="text-justify">
+                                 <div class="text-justify">
                                     <span class="titlefont first-title-color third-title">
                                             <?php the_title(); ?>
                                     </span>
@@ -109,8 +109,6 @@ if ( ! is_page_template() ) {
                         $offset_rest_of_the_articles=1;
                      else: $offset_rest_of_the_articles=0;
                      endif;
-                     echo $count_full;
-                    echo $countothersfull;
                     $other_recentarticles = new WP_Query(array('posts_per_page' => $restofthearticles, 'category__not_in' => array( 4 ), 'offset' => $offset_rest_of_the_articles));
 
                    if ($count_full + $countothersfull > 1){
@@ -212,14 +210,23 @@ if ( ! is_page_template() ) {
                             <div class="flex-column text-container">
                                 <h3 class="first-title-color titlefont secondary-title">Contact & Questions</h3>
 
-                                <span class="titlefont third-title">Des questions pour nous ?</span>
+                                <span style="margin-bottom: 15px" class="second-title-color titlefont third-title">Des questions pour nous ?</span>
                                 <span class="btn-shape">Envoyer un message</span>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            <script>
+               // function() {
+                //
+                //}
+               jQuery(document).ready(function($) {
+                    console.log( "ready!" );
+                   $('body').removeClass('menu-open');
+               });
 
+            </script>
 
 
 <?php

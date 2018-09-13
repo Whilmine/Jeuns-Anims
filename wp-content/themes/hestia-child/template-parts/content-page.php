@@ -23,7 +23,7 @@ $wrap_class     = apply_filters( 'hestia_filter_page_content_classes', 'col-md-8
 			?>
 			<div class="<?php echo esc_attr( $wrap_class ); ?>">
 				<?php
-				do_action( 'hestia_before_page_content' );
+				//do_action( 'hestia_before_page_content' );
 
 				the_content();
 				?>
