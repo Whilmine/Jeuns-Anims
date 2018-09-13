@@ -63,7 +63,6 @@ if ( ! is_page_template() ) {
 
                             </div>
 
-
                         <?php endwhile;
                         else:
                         // si il n'y en a pas, on affiche l'article le plus récent
@@ -211,7 +210,7 @@ if ( ! is_page_template() ) {
                                 <h3 class="first-title-color titlefont secondary-title">Contact & Questions</h3>
 
                                 <span style="margin-bottom: 15px" class="second-title-color titlefont third-title">Des questions pour nous ?</span>
-                                <span class="btn-shape">Envoyer un message</span>
+                                <a href="//contact"><span class="btn-shape">Envoyer un message</span></a>
                             </div>
                         </div>
                     </div>
