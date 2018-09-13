@@ -21,7 +21,11 @@ if ( ! is_page_template() ) {
 		 */
 		//do_action( 'hestia_header' ); ?>
 <div class="title-content">
-    <img class="absolute" id="saxo-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle01.png">
+    <div class="absolute" style="height: 500px; width: 100%; overflow: hidden">
+        <img class="absolute" id="triangle01" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle01.png">
+        <img class="absolute" id="triangle02" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle02.png">
+    </div>
+
     <?php
     if ( function_exists( 'the_custom_logo' ) ) {
         the_custom_logo();

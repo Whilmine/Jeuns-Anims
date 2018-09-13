@@ -260,6 +260,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
 .home .title-content .custom-logo {
@@ -488,7 +489,7 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     width: 300px;
     transform: rotate(-0.035turn);
     left: 20%;
-    top: 160px;
+    top: 0;
 }
 
 @media screen and (max-width: 767px) {
@@ -908,4 +909,60 @@ border-radius:0 0 0 8px;
     font-style:italic;
     font-weight:bold;
 }
+/* animations css*/
 
+#triangle01 {
+    animation: triangle01 10s linear 1s infinite alternate-reverse;
+    bottom: 0;
+    left: 20px;
+    width: 150px;
+}
+#triangle02 {
+    animation: triangle02 17s ease-in 1s infinite alternate-reverse;
+    bottom: 60px;
+    left: 90%;
+    width: 150px;
+}
+@keyframes triangle01 {
+    0% {
+        bottom: 60px;
+
+    }
+    15% {
+        width: 100px;
+        opacity: 0.65;
+        left: 70px;
+        bottom: 325px;
+        transform: rotate(35deg);
+    }
+    65%{
+        opacity: 0.45;
+        transform: rotate(270deg);
+
+    }
+    100%{
+        opacity: 0.25;
+        width: 50px;
+        bottom: 152px;
+        left: 98%;
+        transform: rotate(90deg);
+    }
+}
+@keyframes triangle02 {
+    0% {
+        left: 90%;
+    }
+    25% {
+        width: 100px;
+        opacity: 0.65;
+        left: 75%;
+        bottom: 490px;
+        transform: rotate(220deg);
+    }
+    55%{
+        opacity: 0.55;
+        bottom: 66px;
+        left: -25%;
+        transform: rotate(-90deg);
+    }
+}
