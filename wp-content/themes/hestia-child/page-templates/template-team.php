@@ -22,11 +22,12 @@ get_header( "pages" );
 <div class="<?php echo hestia_layout(); ?>">
     <section id="team" class="flex-row flex-wrap">
         <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png">
-        <div class="card auto-width">
+        <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png">
+        <div class="card auto">
             <div class="flex-row">
                 <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
                 </div>
-                <div class="flex-column text-container">
+                <div class="flex-column text-container text-justify">
                     <span class="titlefont second-title-color secondary-title">  L'équipe
                     </span>
                     <span> <?php  echo  get_post_field('post_content', 16); ?></span>

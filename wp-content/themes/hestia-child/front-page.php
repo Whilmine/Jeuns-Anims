@@ -21,14 +21,12 @@ if ( ! is_page_template() ) {
 		 */
 		//do_action( 'hestia_header' ); ?>
 <div class="title-content">
+    <img class="absolute" id="saxo-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle01.png">
     <?php
     if ( function_exists( 'the_custom_logo' ) ) {
         the_custom_logo();
     }
     ?>
-
-
-
     <img class="absolute" id="saxo-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/saxo.png">
     <img class="absolute" id="note-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/note.png">
     <img class="absolute" id="guitar-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/guitar.png">
