@@ -42,25 +42,19 @@ get_header( "pages" );
     };
 ?>
     <?php endwhile; wp_reset_query();
-  if ($compteur % 2 == 1)
-  {
-      echo "$compteur est impair";
-  }
-  elseif ($compteur % 2 == 0)
-  {
-      echo "le nombre de cartes est pair";
-  }
     ?>
 
 
         <span class="accentblue titlefont secondary-title">Les membres du bureau</span>
     </div>
 
-    <span class="accentblue titlefont secondary-title">Les bénévoles</span>
+
 
 
     <?php
-    $secondloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
+    $secondloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) );
+    if ($secondloop->have_posts()): ?>
+    <span class="accentblue titlefont secondary-title">Les bénévoles</span>
     <?php while ( $secondloop->have_posts() ) : $secondloop->the_post();
     $meta = get_post_meta( $post->ID, 'your_fields', true );
     if ($meta['checkbox'] != 'checkbox'){
@@ -70,7 +64,8 @@ get_header( "pages" );
     }
     ?>
 
-    <?php endwhile; wp_reset_query(); ?>
+    <?php endwhile; wp_reset_query();
+    endif;?>
 
     </div>
 

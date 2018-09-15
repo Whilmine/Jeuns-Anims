@@ -2,7 +2,7 @@
 //add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 //function theme_enqueue_styles() {
 //wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
- //   wp_enqueue_style( 'other', get_template_directory_uri() . '/style2.css' );
+//   wp_enqueue_style( 'other', get_template_directory_uri() . '/style2.css' );
 
 //}
 
@@ -102,18 +102,18 @@ function add_sub_menu() {
 
 // plusieurs menu
     register_nav_menus(
- array(
-'association-menu' => __( 'Menu - Association' ),
-'footer-menu' => __('Menu - Footer'),
-'legals-menu' => __('Menu - Légaux'),
- )
- );
+        array(
+            'association-menu' => __( 'Menu - Association' ),
+            'footer-menu' => __('Menu - Footer'),
+            'legals-menu' => __('Menu - Légaux'),
+        )
+    );
 }
 add_action( 'init', 'add_sub_menu' );
 
 
 
-    function Memberfield_box() {
+function Memberfield_box() {
     add_meta_box(
         'member_field', // $id
         'Statut', // $title
@@ -210,5 +210,13 @@ register_sidebar( array(
     'after_title' => '',
 ) );
 
+function hestia_excerpt_more_new( $more ) {
+    global $post;
+    if ( ( ( 'page' === get_option( 'show_on_front' ) ) ) || is_single() || is_archive() || is_home() ) {
+        return '<a class="moretag" href="' . esc_url( get_permalink( $post->ID ) ) . '"> ' . esc_html__( '...', 'hestia-pro' ) . '</a>';
+    }
+    return $more;
+}
+add_filter( 'excerpt_more', 'hestia_excerpt_more_new', 20 );
 
 ?>

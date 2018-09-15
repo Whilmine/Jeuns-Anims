@@ -20,18 +20,18 @@ get_header( "pages" );
 
 
 <div class="<?php echo hestia_layout(); ?>">
-    <section id="team" class="flex-row flex-wrap">
+    <section id="team" class="flex-row flex-wrap justify-content">
         <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png">
         <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png">
         <div class="card auto">
             <div class="flex-row">
-                <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>')">
+                <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>'); border-radius: 10px">
                 </div>
-                <div class="flex-column text-container text-justify">
+                <div class="flex-column  text-container text-justify">
                     <span class="titlefont second-title-color secondary-title">  L'équipe
                     </span>
                     <span> <?php  echo  get_post_field('post_content', 16); ?></span>
-
+                    <span class="btn-shape">Voir le trombinoscope</span>
                 </div>
             </div>
         </div>
@@ -39,21 +39,24 @@ get_header( "pages" );
     <?php
     $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
     if ($loop->have_posts()):?>
-
     <section id="articles-about-us" >
         <h2 class="secondary-title titlefont accentblue border-title"> On parle de nous </h2>
         <div 
             <div class="my-slider">
         <?php
             while ( $loop->have_posts() ) : $loop->the_post();
-                $meta = get_post_meta( $post->ID, 'your_fields', true );
+                    $value = get_post_meta($post->ID,'your_fields',true);
                 ?>
                 <div class="card-wrapper">
-                        <img src="<?php echo get_the_post_thumbnail_url(); ?>">
-                            <h3 class='titlefont first-title-color'>
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                    <div class="text-justify">
+                        <h3 class='titlefont first-title-color'>
                             <?php echo the_title();?>
-                            </h3>
+                        </h3>
                         <?php echo the_content(); ?>
+
+                        <a href="<?php  echo $value["text"];?>"> Voir l'article </a>
+                    </div>
                 </div>
             <?php
             endwhile;
@@ -73,7 +76,7 @@ get_header( "pages" );
                     foreach ( get_gallery() as $attachment ) :
                         $count ++;
                     ?>
-                        <img class="gallery-img" id="gallery_image_<?php echo $count ?>" src="<?php echo $attachment->thumb_url?>" onmouseover="bigImg(this)">
+                        <img class="gallery-img" id="gallery_image_<?php echo $count ?>" src="<?php echo $attachment->medium_url?>" onmouseover="bigImg(this)">
 
                         <img  id="gallery_image_<?php echo $count ?>_large" src="<?php echo $attachment->large_url?>" style="display: none;"/>
                     <?php

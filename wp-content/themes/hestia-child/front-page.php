@@ -22,8 +22,14 @@ if ( ! is_page_template() ) {
 		//do_action( 'hestia_header' ); ?>
 <div class="title-content">
     <div class="absolute" style="height: 500px; width: 100%; overflow: hidden">
-        <img class="absolute" id="triangle01" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle01.png">
-        <img class="absolute" id="triangle02" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle02.png">
+        <img class="absolute" id="triangle08" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle04.png">
+        <img class="absolute" id="triangle07" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle07.png">
+        <img class="absolute" id="triangle06" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle06.png">
+        <img class="absolute" id="triangle01" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle01.png">
+        <img class="absolute" id="triangle02" alt="motifs triangulaires"src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle02.png">
+        <img class="absolute" id="triangle03" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle03.png">
+        <img class="absolute" id="triangle04" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle04.png">
+        <img class="absolute" id="triangle05" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle05.png">
     </div>
 
     <?php
