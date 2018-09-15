@@ -31,7 +31,7 @@ get_header( "pages" );
                     <span class="titlefont second-title-color secondary-title">  L'équipe
                     </span>
                     <span> <?php  echo  get_post_field('post_content', 16); ?></span>
-                    <span class="btn-shape">Voir le trombinoscope</span>
+                    <a href="<? get_site_url()?>\trombinoscope" style="margin-left: auto"><span class="btn-shape">Voir le trombinoscope</span></a>
                 </div>
             </div>
         </div>
@@ -40,16 +40,20 @@ get_header( "pages" );
     $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
     if ($loop->have_posts()):?>
     <section id="articles-about-us" >
-        <h2 class="secondary-title titlefont accentblue border-title"> On parle de nous </h2>
-        <div 
+
+        <h2 class="secondary-title titlefont accentblue border-title" style="margin-left: 5%;margin-right: 5%;"> On parle de nous </h2>
+        <div>
             <div class="my-slider">
         <?php
             while ( $loop->have_posts() ) : $loop->the_post();
                     $value = get_post_meta($post->ID,'your_fields',true);
                 ?>
                 <div class="card-wrapper">
+
                     <img src="<?php echo get_the_post_thumbnail_url(); ?>">
                     <div class="text-justify">
+                        <img class="absolute" id="quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png">
+                        <img class="absolute" id="quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png">
                         <h3 class='titlefont first-title-color'>
                             <?php echo the_title();?>
                         </h3>
@@ -90,6 +94,8 @@ get_header( "pages" );
             </div>
         </div>
     </section>
+</div>
+
 
     <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/js/displaythegallery.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
@@ -108,6 +114,7 @@ get_header( "pages" );
             });
         });
     </script>
+
 
 
 	<?php get_footer(); ?>
