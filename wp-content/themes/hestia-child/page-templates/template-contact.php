@@ -22,7 +22,6 @@ get_header( "pages" );
         <div class="card">
           <?php
 
-
             if ( have_posts() ) :
                 while ( have_posts() ) :
                     the_post();
@@ -38,5 +37,6 @@ get_header( "pages" );
         </div>
 
     </div>
+</div>
 
     <?php get_footer(); ?>

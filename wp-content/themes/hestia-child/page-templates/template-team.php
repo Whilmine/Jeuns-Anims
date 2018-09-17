@@ -20,14 +20,14 @@ get_header( "pages" );
 
 
 <div class="<?php echo hestia_layout(); ?>">
-    <section id="team" class="flex-row flex-wrap justify-content">
+    <section id="team" class="flex-row flex-wrap justify-content" >
         <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png">
         <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png">
-        <div class="card auto">
+        <div class="card auto"  data-aos-duration="2000">
             <div class="flex-row">
                 <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>'); border-radius: 10px">
                 </div>
-                <div class="flex-column  text-container text-justify">
+                <div class="flex-column  text-container text-justify" >
                     <span class="titlefont second-title-color secondary-title">  L'équipe
                     </span>
                     <span> <?php  echo  get_post_field('post_content', 16); ?></span>
@@ -39,7 +39,7 @@ get_header( "pages" );
     <?php
     $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
     if ($loop->have_posts()):?>
-    <section id="articles-about-us" >
+    <section id="articles-about-us" data-aos="fade-right" data-aos-duration="2000">
 
         <h2 class="secondary-title titlefont accentblue border-title" style="margin-left: 5%;margin-right: 5%;"> On parle de nous </h2>
         <div>
@@ -70,7 +70,7 @@ get_header( "pages" );
         </div>
     </section>
     <?php endif;?>
-    <section id="photo-gallery" >
+    <section id="photo-gallery" data-aos="fade-right" >
         <div class="card">
             <h2 class="secondary-title titlefont accentblue border-title"> Les photos </h2>
             <div class=" flex-row">

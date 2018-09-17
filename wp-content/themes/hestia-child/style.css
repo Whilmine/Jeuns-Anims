@@ -3,11 +3,36 @@ Theme Name: Jeun's Anims
 Description: thème enfant Hestia
 Template: hestia
 */
+
+/*--------------------------------------------------------------
+SOMMAIRE
+----------------------------------------------------------------
+# Generals
+    ## Var CSS :root;
+    ## Main Settings
+# Overrides Parent Theme
+# Composants Objets
+#Header
+#Pages
+    ## Association
+    ## Team
+    ## Portfolio
+    ## Contact
+# Blog
+    ## Content
+    ## Sidebar
+    # Footer
+#Animations Keyframes
+
+--------------------------------------------------------------*/
+
 @import "/wp-content/themes/hestia-child/fonts/font.css";
 
 :root {
     --main-blue: #01a7b4;
+    --main-blue-rgb:1,167,180;
     --secondary-blue: #009aa4;
+    --secondary-blue-rgb:0,164,164;
     --noir:#333;
     --noir-rgb:51,51,51;
 }
@@ -51,6 +76,10 @@ h1.hestia-title, .main-title {
 
 li {
     list-style: none;
+}
+.navbar a {
+    font-size: 18px !important;
+    font-family: kelsonlight;
 }
 .footer hr{
     display: none;
@@ -182,7 +211,9 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
     padding-right: 40px;
     margin: auto auto 25px 25px;
 }
-
+.main-template .first-title{
+    margin: auto auto 5px 25px;
+}
 .secondary-title {
     font-size: 65px;
 }
@@ -267,14 +298,15 @@ body:not(.home) .navbar-default .navbar-nav > .active:not(.btn) > a {
 .home .title-content {
     background: #FFffff;
     text-align: center;
-    height: 500px;
+    height: 700px;
     margin-top: 86px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-
-
+}
+.home .triangle-container{
+    height: 700px;
 }
 
 .home .title-content .custom-logo {
@@ -365,10 +397,12 @@ color: rgba(0, 0, 0, 0.87);
     padding: 0;
 }
 #home-team .featured-img, #home-contact .featured-img {
-
     margin: 0 auto 0;
     -webkit-clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
     clip-path: polygon(0% 0%, 100% 0%, 80.00% 100%, 0% 100%);
+}
+#home-contact .featured-img img{
+    width: 100%;
 }
 #home-team .featured-img{
     max-width: 750px;
@@ -419,15 +453,19 @@ color: rgba(0, 0, 0, 0.87);
         display: flex;
         width: 98%;
     }
-    #home-otherevents{
-      }
+    .home .title-content{
+        height: 100vh;
+    }
+    .home .triangle-container{
+        height: 100vh;
+    }
     #home-team .featured-img{
         margin: 0;
         clip-path: none;
     }
     #home-team .text-container, #home-contact .text-container{
         width: 100%;
-        padding: 5px;
+        padding: 15px;
     }
     #home-a-la-une .card-wrapper .text-justify{
         padding: 0 10px 10px;
@@ -449,12 +487,22 @@ color: rgba(0, 0, 0, 0.87);
     }
     #menu-menu-jeuns-anims{
         padding: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
     #menu-menu-jeuns-anims > li.menu-item:first-child{
         padding-left: 40px;
         padding-right: 20px;
         margin-left: -20px;
     }
+    #menu-menu-jeuns-anims > li.menu-item:nth-child(2){
+        clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+        -webkit-clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
+        background-color: orangered;
+        padding-left: 50px;
+        padding-right: 20px;
+    }
+
     #home-contact .featured-img{
         clip-path: none;
         -webkit-clip-path:none;
@@ -470,6 +518,7 @@ color: rgba(0, 0, 0, 0.87);
     transform: rotate(0.075turn);
     left: 80%;
     bottom: -95px;
+    z-index: 3;
 }
 
 #tambour-pic {
@@ -481,7 +530,7 @@ color: rgba(0, 0, 0, 0.87);
 #note-pic {
     width: 150px;
     right: 10%;
-    top: 50px;
+    top: 15px
 }
 
 #saxo-pic {
@@ -595,11 +644,11 @@ color: rgba(0, 0, 0, 0.87);
 }
 
 .main-template header {
-    height: 150px;
+    height: 120px;
 }
 
 .main-template header .header {
-    height: 150px;
+    height: 120px;
 }
 
 .main-template .main-raised {
@@ -615,7 +664,7 @@ color: rgba(0, 0, 0, 0.87);
 .main-template .navbar li a {
     text-transform: none;
     font-family: kelsonlight;
-    font-size: 21px;
+    font-size: 21px !important;
 }
 
 .container > .navbar-header {
@@ -670,7 +719,7 @@ div.grid div.card {
 #trombinoscope .card-wrapper:nth-child(2) {
     margin-top: 125px;
 }
-#trombinoscope .card-wrapper:nth-child(3){
+#trombinoscope .card-wrapper:nth-child(3), #trombinoscope .card-wrapper:nth-child(5){
     margin-top: -75px;
 }
 #trombinoscope .card-wrapper:nth-child(4){
@@ -682,228 +731,6 @@ div.grid div.card {
     height: 200px;
 }
 
-/***** Actualités *****/
-#actualites a:hover {
-    opacity: 1;
-}
-
-#actualites a:hover .card {
-    box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-#actualites .card {
-    width: 275px;
-    height: 275px;
-    background-position: center;
-    background-size: cover;
-    overflow: hidden;
-    margin-left: 35px;
-    padding: 0;
-}
-
-#actualites .card-content {
-    visibility: hidden;
-    background: white;
-    height: 100px;
-    margin-top: 175px;
-    overflow: hidden;
-}
-#actualites .no_thumbnail {
-    font-size: 11px;
-    font-family: kelsonregular;
-    color: #0f9aa4;
-    display: block;
-    padding: 5px;
-    border-radius: 5px;
-}
-#actualites a.card-link p {
-    color: var(--main-blue);
-}
-
-#actualites .card:hover .card-content {
-    visibility: visible;
-}
-
-/* Page équipe  */
-#team .text-container {
-    width: 50%;
-    padding: 20px 50px 40px;
-    max-width: 500px;
-    margin: 0 auto 0 20px;
-}
-#team .card{
-    background-color: transparent;
-    box-shadow: none;
-    width: auto;
-}
-#team .card .flex-column{
-    background-color: white;
-    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
-    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    border-radius: 10px;
-}
-#team .card .flex-column .btn-shape{
-    margin-top: 20px;
-    margin-left: auto;
-    text-align: left;
-    padding-left: 60px;
-}
-#team .featured-img {
-    min-height: 400px;
-    min-width: 600px;
-}
-
-#team #piano-pic {
-    width: 200px;
-    z-index: 2;
-    left: 68%;
-    transform: rotate(16deg);
-    top: -19px;
-}
-#team #basse-pic{
-    width: 95px;
-    left: 60%;
-    z-index: 2;
-    top: 300px;
-    transform: rotate(23deg);
-}
-#articles-about-us #quotemark{
-    width: 75px;
-    min-width: auto;
-    left: -60px;
-    height: auto;
-}
-#articles-about-us #quotemark2{
-    width: 75px;
-    left: 102%;
-    height: auto;
-    min-width: auto;
-    transform: rotate(180deg);
-}
-#photo-gallery .grid{
-    grid-template-columns: 150px 150px 150px;
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    min-width: 515px;
-}
-#photo-gallery .gallery-img{
-    border-radius: 10px;
-    margin-left: 20px;
-    height: 150px;
-    width: 150px;
-    object-fit: cover;
-}
-#photo-gallery .image-container{
-    width: 100%;
-    height: 500px;
-}
-#photo-gallery .image-container img{
-    border-radius: 15px;
-    max-width: 600px;
-}
-#photo-gallery .card{
-    padding-top: 0;
-    background-color: transparent;
-    box-shadow: none;
-}
-
-    /* Page contact */
-#contact .first-row {
-    margin-top: 5px;
-}
-
-#contact .caldera-grid .row {
-    display: flex;
-    justify-content: center;
-}
-
-#contact-part .card .secondary-title {
-    line-height: 70px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-#contact .caldera-grid .col-sm-12 {
-    width: 80%;
-}
-
-#contact .caldera-grid .form-control {
-    border-radius: 5px;
-    box-shadow: 2px 0px 6px 1px rgba(1, 167, 180, 0.49);
-    margin-top: 5px;
-    border: transparent;
-}
-
-.form-group label.control-label {
-    font-family: "Barlow Condensed";
-    font-style: italic;
-    text-transform: uppercase;
-    color: var(--main-blue);
-    font-size: 25px;
-}
-
-#contact .caldera-grid .col-sm-12 .form-group div {
-    text-align: center;
-}
-
-#contact .btn_submit {
-    background-color: var(--secondary-blue);
-    border-radius: 5px;
-    text-transform: uppercase;
-    color: white;
-
-}
-
-.slick-prev, .slick-next {
-    display: none !important;
-
-}
-
-.slick-initialized .slick-slide {
-    display: flex !important;
-}
-
-.slick-list {
-    width: 90%;
-    margin: auto 5%;
-}
-
-.slick-slide {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.slick-slide img {
-    max-width: 400px;
-    object-fit: cover;
-    height: 255px;
-    margin: -2px;
-}
-
-.my-slider button {
-    background-color: white !important;
-    border-radius: 15px;
-    min-width: 15px;
-    font-size: 0;
-    padding: 0;
-    height: 15px;
-    margin-left: 10px;
-}
-
-.my-slider .text-justify{
-    padding: 0 30px 20px;
-    max-width: 500px;
-    margin: auto auto;
-    position: relative;
-}
-.slick-dots {
-    display: flex !important;
-    justify-content: center;
-}
 
 
 
@@ -1004,10 +831,26 @@ border-radius:0 0 0 8px;
     font-style:italic;
     font-weight:bold;
 }
+
+/* Pages de blog */
+
+.main-template.blog-template .grid{
+    grid-template-columns: 75% 25%;
+}
+.main-template.blog-template .blog-post .single-post-wrap{
+    grid-row-start: 1;
+    grid-row-end: 1;
+    margin: 0;
+    width: 100%;
+}
+.main-template.blog-template .blog-post .sidebar-blog{
+    grid-column-start: 2;
+    grid-row-start: 1;
+}
 /* animations css*/
 
 #triangle01 {
-    animation: triangle01 10s linear 1s infinite alternate-reverse;
+    animation: triangle01 10s linear 1s infinite alternate;
     bottom: 0;
     left: 20px;
     width: 150px;
@@ -1040,15 +883,15 @@ border-radius:0 0 0 8px;
     z-index: 1;
 }
 #triangle06 {
-    top: 320px;
+    bottom: 0;
     left: 0;
     width: 300px;
     z-index: 0;
 }
 #triangle07 {
     width: 200px;
-    top: 42%;
-    left: 88%;
+    bottom: 0;
+    right: 0;
     z-index: 0;
 }
 #triangle08 {
@@ -1061,8 +904,10 @@ border-radius:0 0 0 8px;
 }
 @keyframes triangle01 {
     0% {
-        bottom: 60px;
-
+        opacity: 1;
+        bottom: 0;
+        left: 20px;
+        width: 150px;
     }
     15% {
         width: 100px;

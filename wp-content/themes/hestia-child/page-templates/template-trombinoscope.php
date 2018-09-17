@@ -26,12 +26,10 @@ get_header( "pages" );
     <?php
    $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
   <?php
-  $compteur = 0;
     while ( $loop->have_posts() ) : $loop->the_post();
 
         $meta = get_post_meta( $post->ID, 'your_fields', true );
     if ($meta['checkbox'] === 'checkbox'){
-        $compteur = $compteur +1;
          echo "<div class='card-wrapper'><div class='card'><img src='";
          echo (get_the_post_thumbnail_url())."'>";
           echo  "<h3 class='titlefont first-title-color'>";
@@ -52,20 +50,38 @@ get_header( "pages" );
 
 
     <?php
-    $secondloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) );
-    if ($secondloop->have_posts()): ?>
-    <span class="accentblue titlefont secondary-title">Les bénévoles</span>
-    <?php while ( $secondloop->have_posts() ) : $secondloop->the_post();
-    $meta = get_post_meta( $post->ID, 'your_fields', true );
-    if ($meta['checkbox'] != 'checkbox'){
-        echo "<div class='card'><img src='";
-        echo (get_the_post_thumbnail_url())."'>";
-        echo  "<h3 class='titlefont first-title-color'>".the_title()."</h3>".the_content()."</div>";
-    }
-    ?>
+    $testyloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10') );
+    if ( $testyloop->have_posts() ) : while ( $testyloop->have_posts() ) : $testyloop->the_post();
+    $metatety = get_post_meta( $post->ID, 'your_fields', true );
+    if ($metatety['checkbox'] != 'checkbox') :
+        $othermember = 'yes';
+         echo  '<span class="accentblue titlefont secondary-title">Les bénévoles</span>';
+    endif;
+    endwhile; endif;
 
-    <?php endwhile; wp_reset_query();
-    endif;?>
+
+
+
+    if ($othermember == 'yes'){
+        $secondloop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10') );
+            if ( $secondloop->have_posts() ) : while ( $secondloop->have_posts() ) : $secondloop->the_post();
+             $meta = get_post_meta( $post->ID, 'your_fields', true );
+                if ($meta['checkbox'] != 'checkbox') {
+                    echo "<div class='card-wrapper'><div class='card'><img src='";
+                    echo (get_the_post_thumbnail_url())."'>";
+                    echo  "<h3 class='titlefont first-title-color'>";
+                    echo the_title();
+                    echo "</h3>";
+                    echo the_content();
+                    echo "</div></div>";
+                }
+             endwhile;
+             endif;
+              wp_reset_query();
+    }
+
+
+    ?>
 
     </div>
 

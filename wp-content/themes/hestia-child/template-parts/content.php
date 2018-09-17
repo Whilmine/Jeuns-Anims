@@ -7,7 +7,6 @@
  * @package Hestia
  * @since Hestia 1.0
  */
-get_header("pages");
 ?>
 
 <article

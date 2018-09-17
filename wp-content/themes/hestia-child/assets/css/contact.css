@@ -1,0 +1,46 @@
+/* Page contact */
+#contact .first-row {
+    margin-top: 5px;
+}
+
+#contact .caldera-grid .row {
+    display: flex;
+    justify-content: center;
+}
+
+#contact-part .card .secondary-title {
+    line-height: 70px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#contact .caldera-grid .col-sm-12 {
+    width: 80%;
+}
+
+#contact .caldera-grid .form-control {
+    border-radius: 5px;
+    box-shadow: 2px 0px 6px 1px rgba(1, 167, 180, 0.49);
+    margin-top: 5px;
+    border: transparent;
+}
+
+.form-group label.control-label {
+    font-family: "Barlow Condensed";
+    font-style: italic;
+    text-transform: uppercase;
+    color: var(--main-blue);
+    font-size: 25px;
+}
+
+#contact .caldera-grid .col-sm-12 .form-group div {
+    text-align: center;
+}
+
+#contact .btn_submit {
+    background-color: var(--secondary-blue);
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: white;
+
+}

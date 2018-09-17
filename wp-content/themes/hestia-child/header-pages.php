@@ -28,9 +28,19 @@ if ( (bool) $hide_top_bar === false ) {
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
-	<?php wp_head(); ?>
-</head>
+	<?php wp_head();
 
+    $pageId = get_the_ID();
+    if ($pageId == 52){?>
+        <link href="/wp-content/themes/hestia-child/assets/css/contact.css" rel="stylesheet">
+    <? }else if ($pageId == 60){
+       ?> <link href="/wp-content/themes/hestia-child/assets/css/actualites.css" rel="stylesheet">
+    <?} else if ($pageId == 16){
+        ?><link href="/wp-content/themes/hestia-child/assets/css/team.css" rel="stylesheet"><? }
+    ?>
+
+</head>
+<?php echo $pageId?>
 <body <?php body_class(); ?>>
 <div class="<?php echo esc_attr( $wrapper_div_classes ); ?> main-template">
 
@@ -45,6 +55,9 @@ if ( (bool) $hide_top_bar === false ) {
         <div style="height: 2px; background-color: #FFffff; width: 80%"></div>
     </header>
 
+
         <?php do_action( 'hestia_do_header' ); ?>
+
+
 
 

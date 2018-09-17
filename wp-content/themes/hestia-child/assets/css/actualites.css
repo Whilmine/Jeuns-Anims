@@ -1,0 +1,41 @@
+/***** Actualités *****/
+#actualites a:hover {
+    opacity: 1;
+}
+
+#actualites a:hover .card {
+    box-shadow: 2px 5px 5px 5px rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+#actualites .card {
+    width: 275px;
+    height: 275px;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+    margin-left: 35px;
+    padding: 0;
+}
+
+#actualites .card-content {
+    visibility: hidden;
+    background: white;
+    height: 100px;
+    margin-top: 175px;
+    overflow: hidden;
+}
+#actualites .no_thumbnail {
+    font-size: 11px;
+    font-family: kelsonregular;
+    color: #0f9aa4;
+    display: block;
+    padding: 5px;
+    border-radius: 5px;
+}
+#actualites a.card-link p {
+    color: var(--main-blue);
+}
+
+#actualites .card:hover .card-content {
+    visibility: visible;
+}

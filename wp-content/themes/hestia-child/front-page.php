@@ -21,7 +21,7 @@ if ( ! is_page_template() ) {
 		 */
 		//do_action( 'hestia_header' ); ?>
 <div class="title-content">
-    <div class="absolute" style="height: 500px; width: 100%; overflow: hidden">
+    <div class="absolute triangle-container" style=" width: 100%; overflow: hidden">
         <img class="absolute" id="triangle08" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle04.png">
         <img class="absolute" id="triangle07" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle07.png">
         <img class="absolute" id="triangle06" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle06.png">
@@ -44,11 +44,11 @@ if ( ! is_page_template() ) {
     <img class="absolute" id="trompette-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/trompette.png">
 </div>
 	    <div class="<?php echo esc_attr( hestia_layout() ); ?>">
-            <section id="home-actualites">
-                <h2 class="titlefont white first-title border-title"> A la une </h2>
+            <section id="home-actualites " data-aos="fade-right" data-aos-duration="2000">
+                <h2 class="titlefont white first-title border-title"  > A la une </h2>
                 <div class="grid">
 
-                    <div id="home-a-la-une" class="card-wrapper">
+                    <div id="home-a-la-une"  class="card-wrapper" >
                         <?php
                         $args=array('posts_per_page' => 1,'post_type' => 'post','category_name' => "a-la-une");
                         $the_query_a_la_une = new WP_Query($args); ?>
@@ -121,13 +121,13 @@ if ( ! is_page_template() ) {
                    if ($count_full + $countothersfull > 1){
                     ?>
                     <div id="home-otherevents">
-                        <h3 class="secondary-title titlefont accentblue border-title">Les autres événements</h3>
-                        <ul>
+                        <h3 class="secondary-title titlefont accentblue border-title"    >Les autres événements</h3>
+                        <ul >
                             <?php
                             while ($recentarticles -> have_posts()) :  $recentarticles -> the_post();
                                 $has_thumbnail = has_post_thumbnail();
                                 if ($has_thumbnail == false){ $style = "150px;";} else {$style="0px";}?>
-                                <li style="margin-left:<?php echo $style?>">
+                                <li style="margin-left:<?php echo $style?>"  >
                                     <?php if ( has_post_thumbnail()) : ?>
                                         <span class="featured-img" style="background-image: url('<?php echo the_post_thumbnail_url()?>')"></span>
                                     <?php endif; ?>
@@ -174,10 +174,10 @@ if ( ! is_page_template() ) {
             $name = $post->post_title;
             $img = get_the_post_thumbnail_url($post_id);
             ?>
-            <section id="home-team">
+            <section id="home-team" data-aos="fade-right" data-aos-duration="2000">
             <div>
-                <h2 class="titlefont white first-title border-title"><?php echo $name;?></h2>
-                <div class="card auto-width">
+                <h2 class="titlefont white first-title border-title" ><?php echo $name;?></h2>
+                <div class="card auto-width" >
                     <div class="flex-row">
                         <div class="featured-img">
                             <img src="<?php echo $img ?>">
@@ -206,9 +206,9 @@ if ( ! is_page_template() ) {
                 $post = get_post( $post_id );
                 $name = $post->post_title;
                 $img = get_the_post_thumbnail_url($post_id);?>
-            <section id="home-contact">
+            <section id="home-contact" data-aos="fade-left" data-aos-duration="2000">
                 <div>
-                    <h2 class="titlefont white first-title border-title">Contactez-nous</h2>
+                    <h2 class="titlefont white first-title border-title" >Contactez-nous</h2>
                     <div class="card">
                         <div class="flex-row">
                             <div class="featured-img">
@@ -224,6 +224,7 @@ if ( ! is_page_template() ) {
                     </div>
                 </div>
             </section>
+
           <?php
 
     $loop = new WP_Query( array( 'post_type' => 'members','category_name' =>'membre-du-bureau',  'posts_per_page' => '10' ) ); ?>
