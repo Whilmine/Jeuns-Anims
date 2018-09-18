@@ -88,9 +88,11 @@ li {
     padding: 30px 0 10px;
 }
 .footer .footer-title, .footer .widget h5{
-    font-family: kelsonregular;
+    border-bottom: solid 1px white;
 }
-
+.widget a:hover{
+    color: var(--main-blue) !important;
+}
 .btn.btn-primary {
     background-color: #009aa4 !important;
 }
@@ -465,7 +467,10 @@ color: rgba(0, 0, 0, 0.87);
     }
     #home-team .text-container, #home-contact .text-container{
         width: 100%;
-        padding: 15px;
+        padding: 15px !important;
+    }
+    #home-contact .text-container h3,  #home-team .text-container h3{
+        margin-top: 2px;
     }
     #home-a-la-une .card-wrapper .text-justify{
         padding: 0 10px 10px;
@@ -485,20 +490,16 @@ color: rgba(0, 0, 0, 0.87);
     #home-otherevents .border-title.link-title{
         margin-left: 25px;
     }
-    #menu-menu-jeuns-anims{
-        padding: 0;
-        flex-wrap: wrap;
-        justify-content: flex-start;
-    }
+
     #menu-menu-jeuns-anims > li.menu-item:first-child{
         padding-left: 40px;
         padding-right: 20px;
-        margin-left: -20px;
+        margin-left: 0;
+        margin-bottom: 10px;
     }
     #menu-menu-jeuns-anims > li.menu-item:nth-child(2){
         clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
         -webkit-clip-path: polygon(25% 0%, 100% 0%, 90% 100%, 17% 100%);
-        background-color: orangered;
         padding-left: 50px;
         padding-right: 20px;
     }
@@ -668,7 +669,7 @@ color: rgba(0, 0, 0, 0.87);
 }
 
 .container > .navbar-header {
-    display: none !important;
+    /*display: none !important;*/
 }
 
 .main-template .container > .navbar-header {
@@ -681,6 +682,14 @@ color: rgba(0, 0, 0, 0.87);
     }
     .main-template header .header, .main-template header{
         height: 100px;
+    }
+    #menu-menu-jeuns-anims{
+        padding: 0;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .navbar > .container{
+        margin-top: 10px;
     }
 }
 
@@ -744,33 +753,22 @@ div.grid div.card {
 .footer--link a:hover,.footer--link a:focus{
 color:var(--main-blue);
 }
-.footer--link a::after{
-    content: '';
+
+.footer-big ul li a{
     display: inline-block;
-    position:absolute;
-    bottom:0;
-    left:0;
-    width:0;
-    height:2px;
-    background:var(--main-blue);
-    transition: all 0.35s ease-in-out;
 
-}
-.footer--link a:hover::after{
-    width:100%;
-}
+    position: relative;
+    padding: 5px 0;
 
+    border-radius: 3px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+}
 /*
-#menu-menu-footer li a:hover,#menu-menu-footer li a:focus{
-color:var(--main-blue);
-}
-
-#menu-menu-footer li a {
-    position:relative;
-    line-height:100%;}
 
     /*sinon les a en tant que tag sont bien plus grands que le texte*/
-#menu-menu-footer li a::after{
+#menu-menu-footer li a::after, #nav_menu-3 li a::after{
     content: '';
     display: inline-block;
     position:absolute;
@@ -781,7 +779,7 @@ color:var(--main-blue);
     background:var(--main-blue);
     transition: all 0.35s ease-in-out;
 }
-#menu-menu-footer li a:hover::after{
+#menu-menu-footer li a:hover::after, #nav_menu-3 li a:hover:after {
     width:100%;
 }
 

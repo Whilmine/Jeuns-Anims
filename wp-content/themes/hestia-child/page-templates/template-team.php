@@ -39,7 +39,7 @@ get_header( "pages" );
     <?php
     $loop = new WP_Query( array( 'post_type' => 'articles-about-us') );
     if ($loop->have_posts()):?>
-    <section id="articles-about-us" data-aos="fade-right" data-aos-duration="2000">
+    <section id="articles-about-us">
 
         <h2 class="secondary-title titlefont accentblue border-title" style="margin-left: 5%;margin-right: 5%;"> On parle de nous </h2>
         <div>

@@ -39,3 +39,12 @@
 #actualites .card:hover .card-content {
     visibility: visible;
 }
+
+@media screen and (max-width: 767px){
+    #actualites .card{
+        margin-left: 0;
+    }
+    #actualites .card-content{
+        visibility: visible;
+    }
+}
