@@ -41,10 +41,16 @@
 }
 
 @media screen and (max-width: 767px){
-    #actualites .card{
-        margin-left: 0;
-    }
+
     #actualites .card-content{
         visibility: visible;
+    }
+    #actualites  a{
+        width: 100%;
+    }
+    #actualites .card{
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
     }
 }

@@ -669,7 +669,7 @@ color: rgba(0, 0, 0, 0.87);
 }
 
 .container > .navbar-header {
-    /*display: none !important;*/
+    display: none !important;
 }
 
 .main-template .container > .navbar-header {
@@ -690,6 +690,27 @@ color: rgba(0, 0, 0, 0.87);
     }
     .navbar > .container{
         margin-top: 10px;
+    }
+    .container > .navbar-header {
+        display: flex !important;
+    }
+    .navbar button.navbar-toggle{
+        color: var(--main-blue);
+    }
+    .navbar.navbar-fixed-top .navbar-collapse{
+        position: relative;
+        background-color: transparent;
+    }
+    .navbar.navbar-fixed-top .navbar-collapse ~ button.navbar-toggle{
+        position: absolute;
+        top: 20px;
+        right: 5%;
+    }
+    .navbar.navbar-fixed-top .navbar-collapse.collapse.in ~ button.navbar-toggle {
+        transition: none;
+    }
+    .navbar.navbar-fixed-top .navbar-collapse.navbar-scroll-point{
+        position: fixed;
     }
 }
 

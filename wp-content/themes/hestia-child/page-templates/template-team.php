@@ -88,7 +88,7 @@ get_header( "pages" );
                     endforeach ?>
                 </div>
                 <div class="image-container flex-row">
-                    <img id="featuredimg"/>
+                    <img id="featuredimg">
                 </div>
 
             </div>

@@ -144,5 +144,56 @@
 }
 
 @media screen and (max-width: 767px){
-
+    .main-template .main-raised{
+        margin: 0;
+    }
+    #team .card{
+        margin: 0;
+        padding: 0;
+    }
+    #team .featured-img {
+        min-height: auto;
+        min-width: auto;
+        width: 100%;
+        max-height: 400px;
+        height: 200px;
+        margin: 0 ;
+    }
+    #team .text-container{
+        width: 100%;
+        margin: 0;
+    }
+    .slick-initialized .slick-slide{
+        display: block !important;
+    }
+    #articles-about-us #quotemark2, #articles-about-us #quotemark{
+        width: 50px;
+    }
+    #articles-about-us #quotemark2{
+        bottom: 0;
+    }
+    #photo-gallery .card{
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        max-width: none;
+    }
+    #photo-gallery .grid{
+        display: flex;
+        flex-wrap: wrap;
+        min-width:auto;
+    }
+    #photo-gallery .secondary-title{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #photo-gallery .gallery-img{
+        margin-bottom: 10px ;
+    }
+    #photo-gallery .image-container{
+        height: auto;
+    }
+    #photo-gallery .featuredimg{
+        display: none;
+    }
 }

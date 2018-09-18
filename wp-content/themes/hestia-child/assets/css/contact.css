@@ -44,3 +44,28 @@
     color: white;
 
 }
+
+@media screen and (max-width: 767px) {
+    #contact {
+        margin: 0;
+    }
+
+    #saxo-pic-contact {
+        right: 5px;
+        width: 88px;
+    }
+
+    #fa-pic-contact {
+        width: 80px;
+        left: 25px;
+        bottom: 50px;
+    }
+
+    .caldera-grid .form-group {
+        margin-bottom: 5px;
+    }
+
+    #contact .caldera-grid .col-sm-12 {
+        width: 90%;
+    }
+}
