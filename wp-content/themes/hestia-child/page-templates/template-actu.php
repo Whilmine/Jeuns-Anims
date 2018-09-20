@@ -30,13 +30,13 @@ get_header( "pages" );
     foreach($myposts as $post) :
         setup_postdata($post); ?>
 
-        <a href="<?php echo the_permalink()?>">
+        <a href="<?php echo the_permalink()?>" data-aos="fade-left" data-aos-duration="2000">
             <?php if (has_post_thumbnail()) : ?>
                 <div class="card" style="background-image:url('<?php echo the_post_thumbnail_url();?>')">
                 <?php else: ?>
                 <div class="card" style="background-image: url('/wp-content/themes/hestia-child/assets/img/background.jpg')"><?php endif; ?>
                     <span class="card-link">
-                        <div <?php if(has_post_thumbnail()) : ?> class="card-content"<?php endif;?> style="padding:5px 15px; text-align: justify">
+                        <div <?php if(has_post_thumbnail()) : ?> class="card-content"<?php endif;?> style="padding:5px 15px; text-align: justify" >
                             <span class="first-title-color fourth-title titlefont">
                                 <?php the_title(); ?>
                             </span>

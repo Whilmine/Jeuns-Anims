@@ -44,7 +44,7 @@ if ( ! is_page_template() ) {
     <img class="absolute" id="trompette-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/trompette.png">
 </div>
 	    <div class="<?php echo esc_attr( hestia_layout() ); ?>">
-            <section id="home-actualites " data-aos="fade-right" data-aos-duration="2000">
+            <section id="home-actualites " data-aos="fade-right" ata-aos-easing="ease-in-out">
                 <h2 class="titlefont white first-title border-title"  > A la une </h2>
                 <div class="grid">
 
@@ -174,10 +174,10 @@ if ( ! is_page_template() ) {
             $name = $post->post_title;
             $img = get_the_post_thumbnail_url($post_id);
             ?>
-            <section id="home-team" data-aos="fade-right" data-aos-duration="2000">
+            <section id="home-team" >
             <div>
-                <h2 class="titlefont white first-title border-title" ><?php echo $name;?></h2>
-                <div class="card auto-width" >
+                <h2 class="titlefont white first-title border-title"  data-aos="fade-right" data-aos-easing="ease-in-out"><?php echo $name;?></h2>
+                <div class="card auto-width" data-aos="fade-right" data-aos-easing="ease-in-out" >
                     <div class="flex-row">
                         <div class="featured-img">
                             <img src="<?php echo $img ?>">
@@ -206,10 +206,10 @@ if ( ! is_page_template() ) {
                 $post = get_post( $post_id );
                 $name = $post->post_title;
                 $img = get_the_post_thumbnail_url($post_id);?>
-            <section id="home-contact" data-aos="fade-left" data-aos-duration="2000">
+            <section id="home-contact" >
                 <div>
-                    <h2 class="titlefont white first-title border-title" >Contactez-nous</h2>
-                    <div class="card">
+                    <h2 class="titlefont white first-title border-title"  data-aos="fade-left" ata-aos-easing="ease-in-out">Contactez-nous</h2>
+                    <div class="card"  data-aos="fade-left" ata-aos-easing="ease-in-out">
                         <div class="flex-row">
                             <div class="featured-img">
                                 <img src="<?php echo $img ?>">

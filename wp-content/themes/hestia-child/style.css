@@ -46,6 +46,12 @@ SOMMAIRE
 
 body {
     background-color: var(--main-blue);
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#01a7b4+0,56c9d3+45,52adc9+70,01a7b4+95 */
+    /*background: #01a7b4; /* Old browsers */
+    background: -moz-linear-gradient(top, #01a7b4 0%, #56c9d3 45%, #52adc9 70%, #01a7b4 95%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #01a7b4 0%,#56c9d3 45%,#52adc9 70%,#01a7b4 95%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #01a7b4 0%,#56c9d3 45%,#52adc9 70%,#01a7b4 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#01a7b4', endColorstr='#01a7b4',GradientType=0 ); /* IE6-9 */
 }
 
 h1.hestia-title, .main-title {

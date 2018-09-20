@@ -162,6 +162,7 @@
     #team .text-container{
         width: 100%;
         margin: 0;
+        padding: 20px 10px;
     }
     .slick-initialized .slick-slide{
         display: block !important;
@@ -195,5 +196,13 @@
     }
     #photo-gallery .featuredimg{
         display: none;
+    }
+    #team #piano-pic{
+        display: none;
+    }
+    #team #basse-pic{
+        width: 50px;
+        left: 0;
+        top: -19px;
     }
 }
