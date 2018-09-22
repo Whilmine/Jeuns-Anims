@@ -858,6 +858,28 @@ border-radius:0 0 0 8px;
     font-style:italic;
     font-weight:bold;
 }
+/*Cookie banner*/
+#cn-accept-cookie,#cn-refuse-cookie,#cn-more-info{
+    margin-top:0;
+    box-shadow:none !important;
+}
+#cn-accept-cookie{
+    background-color:var(--main-blue);
+    border-radius:0;
+    padding-top:3px;
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    color:white;
+}
+#cn-refuse-cookie{
+    background-color:transparent !important;
+    color:white;
+}
+#cn-more-info{
+    background:none;
+    color:white;
+    text-decoration:underline;
+}
 
 /* Pages de blog */
 
