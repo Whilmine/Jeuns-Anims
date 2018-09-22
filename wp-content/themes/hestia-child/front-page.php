@@ -56,9 +56,31 @@ if ( ! is_page_template() ) {
 
 
                             <div class="card">
-                                <?php if (has_post_thumbnail()) : ?>
-                                    <img src="<?php echo the_post_thumbnail_url()?>">
-                                <? endif;?>
+                                <?php $value = get_post_meta($post->ID,'your_fields',true);
+                                      $video_mp4 =  $value["video"];
+                                      $video_youtube = $value["youtube"];
+                                      if ($video_youtube !=""){
+                                            $youtube_char = "https://www.youtube.com/watch?v=";
+                                            $youtube_link = str_split($youtube_char);
+
+                                            $link_sended = str_split($video_youtube);
+                                            $lettercount = 0;
+
+                                            foreach ($youtube_link as $value01){
+                                                if ($value01 == $link_sended[$lettercount]){
+                                                    unset($link_sended[$lettercount]);
+                                                    $lettercount++;
+                                                }}
+                                                ?>
+
+                                          <iframe width="560" height="315" src="<? echo "http://www.youtube.com/embed/"; foreach ($link_sended as $element){
+                                          echo $element;}?>?autoplay=1&loop=1&playlist=<?foreach ($link_sended as $element){
+                                              echo $element;}?>" frameborder="0"allow="autoplay; encrypted-media" allowfullscreen>
+                                          </iframe>
+                                <?php } else if ($video_mp4 !="") {
+                                          echo wp_video_shortcode(array('src' => $video_mp4, 'autoplay' => "on", 'height' => '500'));
+                                          global $wp_embed; } else if (has_post_thumbnail()) {
+                                          ?>  <img src="<?php echo the_post_thumbnail_url()?>">; <? }?>
                                 <div class="text-justify">
                                     <span class="titlefont first-title-color third-title">
                                         <?php the_title(); ?>
@@ -68,6 +90,7 @@ if ( ! is_page_template() ) {
                                     </p>
                                 </div>
                                 <a href="<?php the_permalink() ?>">  <span class="btn-shape">Lire la suite</span>  </a>
+
 
                             </div>
 

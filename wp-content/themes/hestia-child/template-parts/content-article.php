@@ -43,6 +43,7 @@ $wrap_class     = apply_filters( 'hestia_filter_single_post_content_classes', 's
                 <?
                 the_gallery();
                 ?>
+
             </article>
             <?php
             do_action( 'hestia_after_single_post_article' );

@@ -82,7 +82,7 @@ function wpm_custom_post_type() {
 
     );
 
-    // On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+    // On enregistre notre custom post type qu'on nomme ici "members" et ses arguments
     register_post_type( 'members', $args );
     register_taxonomy_for_object_type( 'category', 'members' );
     register_taxonomy_for_object_type( 'post_tag', 'members' );
@@ -117,12 +117,23 @@ function Memberfield_box() {
     add_meta_box(
         'member_field', // $id
         'Statut', // $title
-        'show_your_fields_meta_box', // $callback
+        'show_member_meta_box', // $callback
         'members', // $screen
         'normal', // $context
         'high' // $priority
     );
 }
+function Video_box() {
+    add_meta_box(
+        'member_field', // $id
+        'Vidéo mise en avant', // $title
+        'show_video_meta_box', // $callback
+        'post', // $screen
+        'normal', // $context
+        'high' // $priority
+    );
+}
+
 
 function link_box() {
     add_meta_box(
@@ -134,6 +145,7 @@ function link_box() {
         'high' // $priority
     );
 }
+add_action( 'add_meta_boxes', 'Video_box' );
 add_action( 'add_meta_boxes', 'link_box' );
 add_action( 'add_meta_boxes', 'Memberfield_box' );
 
@@ -168,7 +180,7 @@ add_action( 'save_post', 'save_your_fields_meta' );
 
 
 
-function show_your_fields_meta_box() {
+function show_member_meta_box() {
     global $post;
     $meta = get_post_meta( $post->ID, 'your_fields', true ); ?>
 
@@ -179,10 +191,8 @@ function show_your_fields_meta_box() {
             <input type="checkbox" name="your_fields[checkbox]" value="checkbox" <?php if ( $meta['checkbox'] === 'checkbox' ) echo 'checked'; ?>>
         </label>
     </p>
-
-
-
 <?php }
+
 
 function show_your_meta_box() {
     global $post;
@@ -196,9 +206,30 @@ function show_your_meta_box() {
         <input type="text" name="your_fields[text]" id="your_fields[text]" class="regular-text" value="<?php echo $meta['text']; ?>">
     </p>
 
+<?php }
+
+function show_video_meta_box() {
+    global $post;
+    $meta = get_post_meta( $post->ID, 'your_fields', true ); ?>
+
+    <input type="hidden" name="your_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+
+    <p>
+        Pour  ajouter une video mise en avant, ajoutez la vidéo dans la <a href=" <?php get_site_url()?>/wp-admin/upload.php" target="_blank"> bibliothèque</a> puis récupérez le lien et collez le dans le champ ci dessous
+               <br>
+        <input type="text" name="your_fields[video]" id="your_fields[video]" class="regular-text" value="<?php echo $meta['video']; ?>">
+
+        <input type="text" name="your_fields[youtube]" id="your_fields[youtube]" class="regular-text" value="<?php echo $meta['youtube']; ?>">
+
+
+    </p>
+
 
 
 <?php }
+
+
+
 
 register_sidebar( array(
     'name' => __( 'Sidebar blog', 'appliance' ),

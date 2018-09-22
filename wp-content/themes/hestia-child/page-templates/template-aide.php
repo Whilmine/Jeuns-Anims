@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page aide
+ * Template Name: Page contact
  *
  *Le template pour la page contact.
  *
@@ -16,8 +16,6 @@ get_header( "pages" );
 //do_action( 'hestia_before_single_page_wrapper' ); ?>
 
 <div id="contact" class="<?php echo hestia_layout(); ?>">
-    <img class="absolute" id="saxo-pic-contact" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/saxo.png">
-    <img class="absolute" id="fa-pic-contact" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/fa.png">
     <div class="flex-row flex-wrap">
         <div class="card">
           <?php
