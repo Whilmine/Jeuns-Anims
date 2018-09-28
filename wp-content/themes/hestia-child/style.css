@@ -570,7 +570,7 @@ color: rgba(0, 0, 0, 0.87);
     #trompette-pic {
         width: 180px;
         left: 1%;
-        top: 200px;
+        top: 55px;
         transform: rotate(-0.075turn);
     }
     #note-pic{
@@ -586,7 +586,7 @@ color: rgba(0, 0, 0, 0.87);
     }
     #tambour-pic {
         width: 70px;
-        top: 449px;
+        top: 400px;
         left: 46%;
     }
     #guitar-pic {
@@ -681,7 +681,9 @@ color: rgba(0, 0, 0, 0.87);
 .main-template .container > .navbar-header {
     display: table-cell !important;
 }
-
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus, .navbar .navbar-nav .dropdown .dropdown-menu li a:hover, .navbar .navbar-nav .dropdown .dropdown-menu li a:focus, .navbar button.navbar-toggle:hover, .navbar .navbar-nav li:hover > a i{
+    color: #31bdc8 !important;
+}
 @media screen and (max-width: 767px) {
     .main-template .navbar{
         background-color: #f8f8f8;
@@ -749,7 +751,7 @@ div.grid div.card {
 }
 
 #trombinoscope .card-wrapper:nth-child(odd) {
-    margin: 0 10% auto 15%
+    margin: 0 10% auto 20%
 }
 
 #trombinoscope .card-wrapper:nth-child(2) {
@@ -927,6 +929,16 @@ border-radius:0 0 0 8px;
     z-index: 0;
     transform: rotate(120deg);
 }
+#triangle09 {
+    width: 250px;
+    bottom: 0;
+    opacity: 0.75;
+    left: 25%;
+    z-index: 0;
+    transform: rotate(120deg);
+    animation: triangle09 25s ease-in 1s infinite alternate;
+
+}
 @keyframes triangle01 {
     0% {
         opacity: 1;
@@ -1024,3 +1036,83 @@ border-radius:0 0 0 8px;
         transform: rotate(-190deg);
     }
 }
+@keyframes triangle09 {
+    0%{
+         width: 250px;
+         bottom: 0;
+         opacity: 0.75;
+         left: 25%;
+
+     }
+    15%{
+        bottom: 80%;
+        left: 65%;
+        transform: rotate(-190deg);
+
+    }
+    25%{
+        left: 95%;
+        bottom: 50%;
+        transform: rotate(120deg);
+    }
+    66%{
+        left: 5%;
+        bottom: 67px;
+        transform: rotate(370deg);
+    }
+}
+@media screen and (max-width: 767px) {
+    #triangle02 {
+        width: 70px;
+
+    }
+    @keyframes triangle02 {
+        0% {
+            left: 60%;
+            width: 70px;
+        }
+        25% {
+            width: 100px;
+            opacity: 0.65;
+            left: 75%;
+            bottom: 490px;
+            transform: rotate(220deg);
+        }
+        55%{
+            opacity: 0.55;
+            bottom: 66px;
+            left: -25%;
+            transform: rotate(-90deg);
+        }
+    }
+    @keyframes triangle04 {
+        0% {
+            bottom: 60px;
+            left: 99%;
+            width: 100px;
+            opacity: 1;
+
+        }
+        25% {
+            width: 80px;
+            opacity: 0.65;
+            left: 75%;
+            bottom: -5px;
+            transform: rotate(220deg);
+        }
+        55%{
+            opacity: 0.55;
+            bottom: 375px;
+            left: 87%;
+            transform: rotate(-120deg);
+        }
+        75%{
+            opacity: 0.3;
+            left: -120px;
+            bottom: 0;
+            width: 175px;
+            transform: rotate(-190deg);
+        }
+    }
+}
+

@@ -30,6 +30,7 @@ if ( ! is_page_template() ) {
         <img class="absolute" id="triangle03" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle03.png">
         <img class="absolute" id="triangle04" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle04.png">
         <img class="absolute" id="triangle05" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle05.png">
+        <img class="absolute" id="triangle09" alt="motifs triangulaires" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/triangle05.png">
     </div>
 
     <?php
@@ -52,7 +53,9 @@ if ( ! is_page_template() ) {
                         <?php
                         $args=array('posts_per_page' => 1,'post_type' => 'post','category_name' => "a-la-une");
                         $the_query_a_la_une = new WP_Query($args); ?>
-                        <?php if ( $the_query_a_la_une -> have_posts() ) : while ( $the_query_a_la_une -> have_posts() ) : $the_query_a_la_une-> the_post(); ?>
+                        <?php if ( $the_query_a_la_une -> have_posts() ) :
+                            while ( $the_query_a_la_une -> have_posts() ) :
+                                $the_query_a_la_une-> the_post(); ?>
 
 
                             <div class="card">

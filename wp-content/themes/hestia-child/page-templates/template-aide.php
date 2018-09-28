@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page contact
+ * Template Name: Page aide
  *
  *Le template pour la page contact.
  *
@@ -15,9 +15,11 @@ get_header( "pages" );
  */
 //do_action( 'hestia_before_single_page_wrapper' ); ?>
 
-<div id="contact" class="<?php echo hestia_layout(); ?>">
+<div id="aide" class="<?php echo hestia_layout(); ?>">
     <div class="flex-row flex-wrap">
         <div class="card">
+
+
           <?php
 
             if ( have_posts() ) :

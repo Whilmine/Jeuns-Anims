@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page aide
+ * Template Name: Page contact
  *
  *Le template pour la page contact.
  *

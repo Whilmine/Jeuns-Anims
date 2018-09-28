@@ -37,6 +37,8 @@ if ( (bool) $hide_top_bar === false ) {
        ?> <link href="/wp-content/themes/hestia-child/assets/css/actualites.css" rel="stylesheet">
     <?} else if ($pageId == 16){
         ?><link href="/wp-content/themes/hestia-child/assets/css/team.css" rel="stylesheet"><? }
+    else if ($pageId == 213){
+        ?><link href="/wp-content/themes/hestia-child/assets/css/aide.css" rel="stylesheet"><? }
     ?>
 
 </head>

@@ -22,9 +22,10 @@ $wrap_class     = apply_filters( 'hestia_filter_single_post_content_classes', 's
             <article id="post-<?php the_ID(); ?>" class="section section-text card">
                 <?php
 
-                do_action( 'hestia_before_single_post_content' );
-                the_post_thumbnail();
-                the_title();
+                do_action( 'hestia_before_single_post_content' ); ?>
+                <h1> <?php the_title();?> </h1>
+                <?php
+
                 the_author();
                 the_date();
 

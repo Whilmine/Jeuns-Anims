@@ -184,11 +184,13 @@ function show_member_meta_box() {
     global $post;
     $meta = get_post_meta( $post->ID, 'your_fields', true ); ?>
 
-    <input type="hidden" name="your_meta_box_nonce" value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
+    <input type="hidden" name="your_meta_box_nonce"
+           value="<?php echo wp_create_nonce( basename(__FILE__) ); ?>">
 
     <p>
         <label for="your_fields[checkbox]">Membre du bureau
-            <input type="checkbox" name="your_fields[checkbox]" value="checkbox" <?php if ( $meta['checkbox'] === 'checkbox' ) echo 'checked'; ?>>
+            <input type="checkbox" name="your_fields[checkbox]" value="checkbox"
+                <?php if ( $meta['checkbox'] === 'checkbox' ) echo 'checked'; ?>>
         </label>
     </p>
 <?php }
@@ -218,6 +220,8 @@ function show_video_meta_box() {
         Pour  ajouter une video mise en avant, ajoutez la vidéo dans la <a href=" <?php get_site_url()?>/wp-admin/upload.php" target="_blank"> bibliothèque</a> puis récupérez le lien et collez le dans le champ ci dessous
                <br>
         <input type="text" name="your_fields[video]" id="your_fields[video]" class="regular-text" value="<?php echo $meta['video']; ?>">
+
+       <br>  Ou ajoutez un lien youtube <br>
 
         <input type="text" name="your_fields[youtube]" id="your_fields[youtube]" class="regular-text" value="<?php echo $meta['youtube']; ?>">
 
