@@ -109,6 +109,7 @@ li {
 
 .navbar:not(.navbar-transparent) li:not(.btn):hover > a {
     color: #39eaf6 !important;
+    background-color:white !important;
 }
 .navbar:not(.navbar-transparent) .dropdown-menu li:not(.btn):hover > a{
     color: #07757e !important;
@@ -599,6 +600,7 @@ color: rgba(0, 0, 0, 0.87);
 }
 
 /*Menu HomePage*/
+
 #menu-menu-jeuns-anims {
     display: flex;
     justify-content: space-evenly;
@@ -857,6 +859,28 @@ border-radius:0 0 0 8px;
     color:white;
     font-style:italic;
     font-weight:bold;
+}
+/*Cookie banner*/
+#cn-accept-cookie,#cn-refuse-cookie,#cn-more-info{
+    margin-top:0;
+    box-shadow:none !important;
+}
+#cn-accept-cookie{
+    background-color:var(--main-blue);
+    border-radius:0;
+    padding-top:3px;
+    -webkit-clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+    color:white;
+}
+#cn-refuse-cookie{
+    background-color:transparent !important;
+    color:white;
+}
+#cn-more-info{
+    background:none;
+    color:white;
+    text-decoration:underline;
 }
 
 /* Pages de blog */

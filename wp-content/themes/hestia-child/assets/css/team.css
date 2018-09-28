@@ -71,6 +71,11 @@
     height: 150px;
     width: 150px;
     object-fit: cover;
+    transition: all 0.25s ease-in-out;
+}
+#photo-gallery .gallery-img:hover{
+transform: translateY(-4px) scale3d(1.05,1.05,1.05);
+box-shadow: 0 2px 4px;
 }
 #photo-gallery .image-container{
     width: 100%;
@@ -88,10 +93,10 @@
 }
 
 
-
+/*Slick*/
 .slick-prev, .slick-next {
     display: none !important;
-
+/*à eliminer dans les settings du scripts*/
 }
 .slick-track{
     display: flex;
