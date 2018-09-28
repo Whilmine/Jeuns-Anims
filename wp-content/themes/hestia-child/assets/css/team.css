@@ -59,6 +59,13 @@
     min-width: auto;
     transform: rotate(180deg);
 }
+#photo-gallery .gallery-img:hover{
+    box-shadow:0 3px 6px rgba(0,0,0,0.35);
+    transform:translateY(-5px);
+}
+#photo-gallery .gallery-img:hover ~ .gallery-img{
+    filter:blur(1px);
+}
 #photo-gallery .grid{
     grid-template-columns: 150px 150px 150px;
     grid-column-gap: 15px;

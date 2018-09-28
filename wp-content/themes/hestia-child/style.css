@@ -444,11 +444,11 @@ color: rgba(0, 0, 0, 0.87);
     margin: 0 100px;
 }
 
-
+/*Small Devices*/
 @media screen and (min-width: 320px) and (max-width: 480px) {
 
 }
-
+/*SM to Tab*/
 @media screen and (max-width: 767px) {
     .home .title-content .custom-logo {
         max-width: 80%;
@@ -479,6 +479,13 @@ color: rgba(0, 0, 0, 0.87);
     #home-contact .text-container h3,  #home-team .text-container h3{
         margin-top: 2px;
     }
+    #home-contact a:last-of-type{
+	margin-top:1rem;
+    }
+    /*ou
+    #home-contact span.btn-shape{
+    	margin-top:1rem;
+    }*/
     #home-a-la-une .card-wrapper .text-justify{
         padding: 0 10px 10px;
     }
@@ -498,6 +505,9 @@ color: rgba(0, 0, 0, 0.87);
         margin-left: 25px;
     }
 
+	#menu-menu-jeuns-anims{
+		margin-top:1.5rem;
+	}
     #menu-menu-jeuns-anims > li.menu-item:first-child{
         padding-left: 40px;
         padding-right: 20px;
@@ -696,8 +706,12 @@ color: rgba(0, 0, 0, 0.87);
     #menu-menu-jeuns-anims{
         padding: 0;
         flex-wrap: wrap;
-        justify-content: flex-start;
+        /*justify-content: flex-start;*/
+        justify-content: center;
+		align-content: space-around;
+		min-height: 100px;
     }
+
     .navbar > .container{
         margin-top: 10px;
     }
