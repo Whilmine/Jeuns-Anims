@@ -10,10 +10,7 @@
 
 //get_header();
 get_header( "pages" );
-/**
- * Don't display page header if header layout is set as classic blog.
- */
-//do_action( 'hestia_before_single_page_wrapper' ); ?>
+ ?>
 
 
 
@@ -21,18 +18,27 @@ get_header( "pages" );
 
 <div id="trombinoscope" class="<?php echo hestia_layout(); ?>">
     <div class="flex-row flex-wrap">
-
-
     <?php
-   $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) ); ?>
-  <?php
-    while ( $loop->have_posts() ) : $loop->the_post();
+   $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) );
+    $instrumentArray = array( array("note-pic","/wp-content/themes/hestia-child/assets/img/note.png"), array("maracas-pic","/wp-content/themes/hestia-child/assets/img/maracas.png"),
+     array("guitar-pic","/wp-content/themes/hestia-child/assets/img/guitar.png"), array("saxo-pic","/wp-content/themes/hestia-child/assets/img/saxo.png"), array("tambour-pic","/wp-content/themes/hestia-child/assets/img/tambour.png"),array("saxo-pic","/wp-content/themes/hestia-child/assets/img/saxo.png"), array("fa-pic","/wp-content/themes/hestia-child/assets/img/fa.png"));
+    $i=0;
 
+    while ( $loop->have_posts() ) : $loop->the_post();
         $meta = get_post_meta( $post->ID, 'your_fields', true );
     if ($meta['checkbox'] === 'checkbox'){
-         echo "<div class='card-wrapper'><div class='card'><img src='";
-         echo (get_the_post_thumbnail_url())."'>";
-          echo  "<h3 class='titlefont first-title-color'>";
+    $thumbnail_id = get_post_thumbnail_id($post->ID);
+    $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
+
+    ?>
+         <div class="card-wrapper">
+             <div class='card'>
+                 <img class="absolute" id="<?php echo $instrumentArray[$i][0] ?>" alt="élement décoratif" src="<?php echo site_url().$instrumentArray[$i][1]?>">
+                 <?php $i++;
+                    if ($i >= 6){$i=0;}?>
+                 <img src="<?echo (get_the_post_thumbnail_url());?>" alt="<? echo $alt?>">
+         <?php
+          echo "<h3 class='titlefont first-title-color'>";
           echo the_title();
           echo "</h3>";
           echo the_content();
