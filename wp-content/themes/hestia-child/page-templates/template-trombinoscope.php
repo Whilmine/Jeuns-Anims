@@ -35,7 +35,8 @@ get_header( "pages" );
              <div class='card'>
                  <img class="absolute" id="<?php echo $instrumentArray[$i][0] ?>" alt="élement décoratif" src="<?php echo site_url().$instrumentArray[$i][1]?>">
                  <?php $i++;
-                    if ($i >= 6){$i=0;}?>
+                    if ($i >= 6){$i=0;
+                 }?>
                  <img src="<?echo (get_the_post_thumbnail_url());?>" alt="<? echo $alt?>">
          <?php
           echo "<h3 class='titlefont first-title-color'>";
@@ -88,7 +89,7 @@ get_header( "pages" );
 
 
     ?>
-
     </div>
+
 
 	<?php get_footer(); ?>

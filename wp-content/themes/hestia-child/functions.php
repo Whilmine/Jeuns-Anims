@@ -19,10 +19,12 @@ function slick_slider_styles(){
 add_action( 'wp_enqueue_scripts', 'slick_slider_styles' );
 
 //Scripts
-function slick_slider_js(){
+function scripts_js(){
     wp_enqueue_script( 'slick_js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '', true );
+
+    wp_enqueue_script( 'particles.js', "/wp-content/themes/hestia-child/assets/js/particles.js");
 }
-add_action( 'wp_enqueue_scripts', 'slick_slider_js' );
+add_action( 'wp_enqueue_scripts', 'scripts_js' );
 
 
 function article_about_us() {
