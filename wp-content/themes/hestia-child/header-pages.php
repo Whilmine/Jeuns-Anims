@@ -39,6 +39,10 @@ if ( (bool) $hide_top_bar === false ) {
         ?><title> Jeun's Anim's - Page équipe </title><? }
     else if ($pageId == 213){
         ?><title> Jeun's Anim's - Page aide </title><? }
+    else if ($pageId == 118){
+        ?><title> Jeun's Anim's - Page mentions légales </title><? }
+    else if ($pageId == 126 ){
+        ?><title> Jeun's Anim's - Page politique de confidentialité </title><? }
     ?>
 
 </head>

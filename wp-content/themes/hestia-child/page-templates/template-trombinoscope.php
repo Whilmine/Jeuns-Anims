@@ -17,6 +17,7 @@ get_header( "pages" );
 
 
 <div id="trombinoscope" class="<?php echo hestia_layout(); ?>">
+    <span class="accentblue titlefont secondary-title title">Les membres du bureau</span>
     <div class="flex-row flex-wrap">
     <?php
    $loop = new WP_Query( array( 'post_type' => 'members', 'posts_per_page' => '10' ) );
@@ -48,9 +49,6 @@ get_header( "pages" );
 ?>
     <?php endwhile; wp_reset_query();
     ?>
-
-
-        <span class="accentblue titlefont secondary-title">Les membres du bureau</span>
     </div>
 
 

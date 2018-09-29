@@ -20,7 +20,7 @@ get_header( "pages" );
 
 
 <div class="<?php echo hestia_layout(); ?>"  id="team">
-    <section id="team" class="flex-row flex-wrap justify-content" >
+    <section  class="flex-row flex-wrap justify-content" >
         <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png" alt="une image décorative de piano">
         <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png" alt="une image décorative de basse">
         <div class="card auto"  data-aos-duration="2000">
