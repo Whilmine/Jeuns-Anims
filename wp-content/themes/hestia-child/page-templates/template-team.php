@@ -19,10 +19,10 @@ get_header( "pages" );
 
 
 
-<div class="<?php echo hestia_layout(); ?>">
+<div class="<?php echo hestia_layout(); ?>"  id="team">
     <section id="team" class="flex-row flex-wrap justify-content" >
-        <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png">
-        <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png">
+        <img class="absolute" id="piano-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/piano.png" alt="une image décorative de piano">
+        <img class="absolute" id="basse-pic" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/basse.png" alt="une image décorative de basse">
         <div class="card auto"  data-aos-duration="2000">
             <div class="flex-row">
                 <div class="featured-img" style="background-image: url('<?php echo  get_the_post_thumbnail_url(16);?>'); border-radius: 10px">
@@ -52,8 +52,8 @@ get_header( "pages" );
 
                     <img src="<?php echo get_the_post_thumbnail_url(); ?>">
                     <div class="text-justify">
-                        <img class="absolute" id="quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png">
-                        <img class="absolute" id="quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png">
+                        <img class="absolute" id="quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
+                        <img class="absolute" id="quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
                         <h3 class='titlefont first-title-color'>
                             <?php echo the_title();?>
                         </h3>
@@ -80,7 +80,7 @@ get_header( "pages" );
                     foreach ( get_gallery() as $attachment ) :
                         $count ++;
                     ?>
-                        <img class="gallery-img" id="gallery_image_<?php echo $count ?>" src="<?php echo $attachment->medium_url?>" onmouseover="bigImg(this)">
+                        <img class="gallery-img" id="gallery_image_<?php echo $count ?>" src="<?php echo $attachment->medium_url?>" onmouseover="bigImg(this)"  alt="<?php echo $attachment->alt ?>">
 
                         <img  id="gallery_image_<?php echo $count ?>_large" src="<?php echo $attachment->large_url?>" style="display: none;"/>
                     <?php
@@ -97,7 +97,16 @@ get_header( "pages" );
 </div>
 
 
-    <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/js/displaythegallery.js"></script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById("featuredimg").src =  document.getElementById("gallery_image_1_large").src;
+
+    };
+
+    function bigImg(x) {
+        document.getElementById("featuredimg").src = document.getElementById(x.id+"_large").src;
+    }
+</script>
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="/wp-content/themes/hestia-child/assets/slick/slick.min.js"></script>

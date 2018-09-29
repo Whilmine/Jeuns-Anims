@@ -32,13 +32,13 @@ if ( (bool) $hide_top_bar === false ) {
 
     $pageId = get_the_ID();
     if ($pageId == 52){?>
-        <link href="/wp-content/themes/hestia-child/assets/css/contact.css" rel="stylesheet">
+        <title> Jeun's Anim's - Page contact </title>
     <? }else if ($pageId == 60){
-       ?> <link href="/wp-content/themes/hestia-child/assets/css/actualites.css" rel="stylesheet">
+       ?>  <title> Jeun's Anim's - Page actualités </title>
     <?} else if ($pageId == 16){
-        ?><link href="/wp-content/themes/hestia-child/assets/css/team.css" rel="stylesheet"><? }
+        ?><title> Jeun's Anim's - Page équipe </title><? }
     else if ($pageId == 213){
-        ?><link href="/wp-content/themes/hestia-child/assets/css/aide.css" rel="stylesheet"><? }
+        ?><title> Jeun's Anim's - Page aide </title><? }
     ?>
 
 </head>

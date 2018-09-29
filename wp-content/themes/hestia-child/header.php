@@ -24,6 +24,7 @@ if ( (bool) $hide_top_bar === false ) {
 <head>
 	<meta charset='<?php bloginfo( 'charset' ); ?>'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content=" jeun's anim's, fête de la musique, les touches" />
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
 		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
@@ -34,5 +35,6 @@ if ( (bool) $hide_top_bar === false ) {
 <body <?php body_class(); ?>>
 	<div class="<?php echo esc_attr( $wrapper_div_classes ); ?>">
 		<header class="header <?php echo esc_attr( $header_class ); ?>">
+            <h1 style="height: 0; visibility: hidden"> Jeun's Anim's</h1>
 			<?php do_action( 'hestia_do_header' ); ?>
 		</header>
