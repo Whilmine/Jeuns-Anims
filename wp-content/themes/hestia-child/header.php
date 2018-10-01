@@ -34,7 +34,7 @@ if ( (bool) $hide_top_bar === false ) {
 
 <body <?php body_class(); ?>>
 	<div class="<?php echo esc_attr( $wrapper_div_classes ); ?>">
-		<header class="header <?php echo esc_attr( $header_class ); ?>">
+		<header class="header <?php echo esc_attr( $header_class ); ?>" role="banner" aria-label="Entête principale">
             <h1 style="height: 0; visibility: hidden"> Jeun's Anim's</h1>
 			<?php do_action( 'hestia_do_header' ); ?>
 		</header>

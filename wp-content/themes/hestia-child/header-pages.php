@@ -52,7 +52,7 @@ if ( (bool) $hide_top_bar === false ) {
 <div class="<?php echo esc_attr( $wrapper_div_classes ); ?> main-template">
 
 
-    <header>
+    <header  role="banner" aria-label="Entête principale">
         <div class=" container header white <?php echo esc_attr( $header_class ); ?>" >
             <h1 class="main-title first-title titlefont"><?php the_title();?></h1>
             <div class="title-logo-wrapper">
