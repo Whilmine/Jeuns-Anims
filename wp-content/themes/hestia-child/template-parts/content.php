@@ -17,6 +17,7 @@
 		if ( ! empty( $post_thumbnail_url ) ) :
 			?>
 		<div class="col-ms-5 col-sm-5">
+            eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
 			<div class="card-image">
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 					<?php echo $post_thumbnail_url; ?>
