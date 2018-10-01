@@ -23,11 +23,15 @@ $wrap_class     = apply_filters( 'hestia_filter_single_post_content_classes', 's
                 <?php
 
                 do_action( 'hestia_before_single_post_content' ); ?>
-                <h1> <?php the_title();?> </h1>
-                <?php
+                <h1 class="first-title-color titlefont secondary-title"> <?php the_title();?> </h1>
+                <span class="second-title-color titlefont fourth-title">
+                    <span class="link-title"> par</span>
+                    <?php
+                    the_author();?>
+                    <span class="link-title"> le <?the_date();?> </span>
+                    </span>
+                <?
 
-                the_author();
-                the_date();
 
                 the_content();
 
@@ -39,20 +43,23 @@ $wrap_class     = apply_filters( 'hestia_filter_single_post_content_classes', 's
                         'link_after'  => '</li>',
                     )
                 );
-                ?>
-                La galerie
-                <?
-                the_gallery();
-                ?>
 
+                $count = 0;
+                foreach ( get_gallery() as $attachment ) :
+                    $count ++;endforeach;
+                if ($count <=0){}
+                else{
+                    ?>   <span class="second-title-color titlefont fourth-title gallery-title"> La galerie</span> <?php
+                    the_gallery();
+                }
+                ?>
             </article>
             <?php
             do_action( 'hestia_after_single_post_article' );
         }
         ?>
     </div>
-    <div class="sidebar-blog"> Sidebar
-
+    <div class="sidebar-blog">
         <?php
         if ( is_active_sidebar( 'blog_sidebar' ) ) : ?>
             <ul id="sidebar">

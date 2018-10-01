@@ -11,18 +11,17 @@ function enqueue_my_styles() {
     global $wp_styles;
     // Load the main stylesheet
     wp_enqueue_style( 'my-theme', get_template_directory_uri() . '/style.css' );
-
-}
-function slick_slider_styles(){
     wp_enqueue_style( 'slick_css', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' );
-}
-add_action( 'wp_enqueue_scripts', 'slick_slider_styles' );
+  }
 
 //Scripts
-function slick_slider_js(){
+function scripts_js(){
     wp_enqueue_script( 'slick_js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), '', true );
+
+    wp_enqueue_script( 'particles.js', "/wp-content/themes/hestia-child/assets/js/particles.js");
+
 }
-add_action( 'wp_enqueue_scripts', 'slick_slider_js' );
+add_action( 'wp_enqueue_scripts', 'scripts_js' );
 
 
 function article_about_us() {
