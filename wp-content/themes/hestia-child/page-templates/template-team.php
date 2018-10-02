@@ -59,7 +59,7 @@ get_header( "pages" );
                         </h3>
                         <?php echo the_content(); ?>
 
-                        <a href="<?php  echo $value["text"];?>"> Voir l'article </a>
+                        <a href="<?php  echo $value["text"];?>" class="btn-shape more-link"> Voir l'article </a>
                     </div>
                 </div>
             <?php

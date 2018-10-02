@@ -1603,6 +1603,14 @@ div.grid div.card {
     position: relative;
 }
 
+#team .my-slider .text-justify > a{
+font-size:1.5rem;
+color:var(--main-blue);
+}
+#team .my-slider .text-justify > a:hover{
+    color:white !important;
+}
+
 #team .slick-dots {
     display: flex !important;
     justify-content: center;
