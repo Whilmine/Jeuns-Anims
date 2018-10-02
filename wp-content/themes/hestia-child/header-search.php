@@ -36,10 +36,9 @@ if ((bool)$hide_top_bar === false) {
 <div class="<?php echo esc_attr($wrapper_div_classes); ?> main-template blog-template">
 
 
-
-    <header  role="banner" aria-label="Entête du blog">
+    <header>
         <div class=" container header white <?php echo esc_attr($header_class); ?>">
-            <span class="main-title first-title titlefont">Article</span>
+            <span class="main-title first-title titlefont">Recherche</span>
             <div class="title-logo-wrapper">
                 <a class="navbar-brand"></a>
             </div>

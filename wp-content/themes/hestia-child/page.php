@@ -33,9 +33,13 @@ get_header('pages');
 
 			if ( have_posts() ) :
 				while ( have_posts() ) :
+                    ?>
+                    <div class="card page-standard">
+                    <?
 					the_post();
-					get_template_part( 'template-parts/content', 'page' );
-					if ( comments_open() || get_comments_number() ) :
+					get_template_part( 'template-parts/content', 'page' ); ?>
+                    </div>
+                    <? if ( comments_open() || get_comments_number() ) :
 						comments_template();
 					endif;
 				endwhile;
@@ -45,4 +49,5 @@ get_header('pages');
 			?>
 		</div>
 	</div>
+</div>
 	<?php get_footer(); ?>
