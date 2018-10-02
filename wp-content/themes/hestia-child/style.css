@@ -1529,7 +1529,7 @@ div.grid div.card {
 
 #team #photo-gallery .gallery-img:hover {
     transform: translateY(-4px) scale3d(1.05, 1.05, 1.05);
-
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 #team #photo-gallery .image-container {
@@ -1604,10 +1604,10 @@ div.grid div.card {
 }
 
 #team .my-slider .text-justify > a{
-font-size:1.5rem;
-color:var(--main-blue);
+font-size:1.25rem;
 }
-#team .my-slider .text-justify > a:hover{
+
+#team .my-slider .text-justify > a.more-link:hover{
     color:white !important;
 }
 
