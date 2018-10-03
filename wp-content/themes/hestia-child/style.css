@@ -1494,7 +1494,7 @@ div.grid div.card {
     transform: rotate(23deg);
 }
 
-#team #articles-about-us #quotemark {
+#team #articles-about-us .quotemark {
     width: 75px;
     min-width: auto;
     left: 5px;
@@ -1502,7 +1502,7 @@ div.grid div.card {
     height: auto;
 }
 
-#team #articles-about-us #quotemark2 {
+#team #articles-about-us .quotemark2 {
     width: 75px;
     right: 5px;
     bottom: -35px;

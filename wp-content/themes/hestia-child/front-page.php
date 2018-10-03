@@ -23,7 +23,7 @@ get_header();
 
 ?>
 
-<div id="particles-js" class="absolute" style="width: 100%; z-index: -1"></div>
+<div id="particles-js" class="absolute" style="width: 100%; z-index: -1;"></div>
 <div class="title-content">
     <div class="absolute triangle-container" style=" width: 100%; overflow: hidden">
         <img class="absolute" id="triangle08" alt="motifs triangulaires"
@@ -67,7 +67,7 @@ get_header();
          alt="une image de trompette">
 </div>
 <div class="<?php echo esc_attr(hestia_layout()); ?>">
-    <section id="home-actualites " data-aos="fade-right" ata-aos-easing="ease-in-out">
+    <section id="home-actualites" data-aos="fade-right" ata-aos-easing="ease-in-out">
         <h2 class="titlefont white first-title border-title"> A la une </h2>
         <div class="grid">
 
@@ -150,7 +150,7 @@ get_header();
                                     <span class="titlefont first-title-color third-title">
                                             <?php the_title(); ?>
                                     </span>
-                                <p style="margin-top: -10px">
+                                <p style="margin-top: -10px;">
                                     <?php the_excerpt() ?>
                                 </p>
                             </div>
@@ -200,7 +200,7 @@ get_header();
                             if ($has_thumbnail == false) {
                                 $style = "150px;";
                             } else {
-                                $style = "0px";
+                                $style = "0px;";
                             } ?>
                             <li style="margin-left:<?php echo $style ?>">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -232,7 +232,7 @@ get_header();
                             if ($has_thumbnail == false) {
                                 $style = "150px;";
                             } else {
-                                $style = "0px";
+                                $style = "0px;";
                             } ?>
                             <li style="margin-left:<?php echo $style ?>">
                                 <?php if (has_post_thumbnail()) : ?>
@@ -314,7 +314,7 @@ get_header();
                     <div class="flex-column text-container">
                         <h3 class="first-title-color titlefont secondary-title">Contact & Questions</h3>
 
-                        <span style="margin-bottom: 15px" class="second-title-color titlefont third-title">Des questions pour nous ?</span>
+                        <span style="margin-bottom: 15px;" class="second-title-color titlefont third-title">Des questions pour nous ?</span>
                         <a href="<? get_site_url() ?>/contact"><span class="btn-shape">Envoyer un message</span></a>
                     </div>
                 </div>

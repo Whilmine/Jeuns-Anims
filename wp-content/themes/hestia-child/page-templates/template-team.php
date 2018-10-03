@@ -50,10 +50,10 @@ get_header( "pages" );
                 ?>
                 <div class="card-wrapper">
 
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo esc_html(get_the_post_thumbnail_caption()) ;?>">
                     <div class="text-justify">
-                        <img class="absolute" id="quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
-                        <img class="absolute" id="quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
+                        <img class="absolute quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
+                        <img class="absolute quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
                         <h3 class='titlefont first-title-color'>
                             <?php echo the_title();?>
                         </h3>
