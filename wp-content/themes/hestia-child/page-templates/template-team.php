@@ -89,6 +89,7 @@ get_header( "pages" );
                 </div>
                 <div class="image-container flex-row">
                     <img id="featuredimg">
+                    <div class="overlay-content"></div>
                 </div>
 
             </div>
