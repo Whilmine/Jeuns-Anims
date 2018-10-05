@@ -6,25 +6,32 @@ Template Name: 404
 get_header( "pages" );
 
 ?>
-<h1 class= "titlefont first-title-color third-title">Page Introuvable</h1>
-<section class="error-404 not-found card" style="background-image:url('<?php echo the_post_thumbnail_url();?>')">
-	<div class="container">
-		<div class="row">
-			<div class="page-404_content">
-				<!-- <span class="page-title page-404--title"> Vous pouvez néanmoins votre bonheur ici...</span>
-				<span class="mb-5 page-404--description"> Ou bien revenir sur vos pas  :)</span> -->
-				<div class="404-search">
-					<?php
-					    get_search_form();
-					?>
-				</div>
-                <a href="<?php echo get_site_url();?>" class="cta page-404--button btn-shape">Retour à l'accueil</a>
+
+    <div class="error-404 not-found card">
+        <div class="container">
+            <div class="row">
+                <div class="page-404_content">
+                    <span class="titlefont second-title-color third-title text-a">
+                         Cette page est indisponible pour le moment,  ou n'existe pas !
+                    </span>
+                    <span class="flex-row ">
+                        Mais vous pouvez  contintuer à chercher
+
+                        <div class="404-search">
+                            <?php
+                                get_search_form();
+                            ?>
+                        </div>
+
+                        ou bien revenir sur vos  pas et
+                        <a href="<?php echo get_site_url();?>" class="cta page-404--button "> retourner à l'accueil</a>
+                    </span>
+                </div>
             </div>
-		</div>
-	</div>
-</section>
+        </div>
+    </div>
 
 
 
-<div class="footer-wrapper">
-	<?php get_footer(); ?>
+
+<?php get_footer(); ?>

@@ -47,10 +47,12 @@ get_header( "pages" );
         <?php
             while ( $loop->have_posts() ) : $loop->the_post();
                     $value = get_post_meta($post->ID,'your_fields',true);
+                    $thumbnail_id = get_post_thumbnail_id($post->ID);
+                    $alt = get_post_meta($thumbnail_id, '_wp_attachment_image_alt', true);
                 ?>
                 <div class="card-wrapper">
 
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo esc_html(get_the_post_thumbnail_caption()) ;?>">
+                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="<?php echo $alt ;?>">
                     <div class="text-justify">
                         <img class="absolute quotemark" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">
                         <img class="absolute quotemark2" src=" <?php echo site_url(); ?>/wp-content/themes/hestia-child/assets/img/quote-mark.png" alt="un élement décoratif">

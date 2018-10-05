@@ -58,7 +58,7 @@ if ((bool)$hide_top_bar === false) {
                if ($lenght >16){$smallertitle ="smallertitle";}
                else{$smallertitle="";}
                ?>
-            <h1 class="main-title first-title titlefont  <? echo $smallertitle;?>"><?php the_title(); ?></h1>
+            <h1 class="main-title first-title titlefont  <? echo $smallertitle;?>"><?php if (is_404()){echo"Page introuvable";} else { the_title();} ?></h1>
 
             <div class="title-logo-wrapper">
                 <a class="navbar-brand"></a>

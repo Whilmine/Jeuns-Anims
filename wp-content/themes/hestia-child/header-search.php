@@ -119,4 +119,5 @@ if ((bool)$hide_top_bar === false) {
             requestAnimationFrame(update);
         };
         requestAnimationFrame(update);
-        ;    </script>
+        ;
+    </script>
